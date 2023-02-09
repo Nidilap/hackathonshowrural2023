@@ -13,6 +13,10 @@ $danger: #cf142b;
 $success: #029049;
 $alert: #FFC107;
 
+$botaoPrimario: #f9f9f9;
+$botaoSecundario: #029049;
+$borderBotao: #d5d5d5;
+
 $backgroundGray: #ECEEEF;
 $backgroundWhite: #fff;
 
@@ -24,4 +28,6 @@ $corTransparentePreto08: rgba(0, 0, 0, 0.8);
     corPrimaria: $corPrimaria;
     corSecundaria: $corSecundaria;
     danger: $danger;
+
+    backgroundWhite: $backgroundWhite;
 }

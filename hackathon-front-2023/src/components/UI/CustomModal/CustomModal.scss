@@ -1,0 +1,14 @@
+@import '../../../assets/constants/colors.scss';
+
+.modalBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: $backgroundWhite;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 10px 2px #aaa;
+    padding: 15px;
+    border-radius: 20px;
+}

@@ -19,7 +19,7 @@ class ClassUtil {
                         return;
                     }
 
-                    if ((item.type === "arrayObject" || item.type == "array") && ((entity[item.name] as []) ?? []).length == 0) {
+                    if ((item.type === "arrayObject" || item.type === "array") && ((entity[item.name] as []) ?? []).length == 0) {
                         novaClasse[item.name as objKey] = [] as any;
                         return;
                     }
@@ -52,7 +52,7 @@ class ClassUtil {
             }
             prototype = Object.getPrototypeOf(prototype);
         }
-        if (prototype == null && typeof cls === "object")
+        if (prototype === null && typeof cls === "object")
             result = Object.getOwnPropertyNames(cls).map(x => ({ name: x } as IProp));
         return result;
     }

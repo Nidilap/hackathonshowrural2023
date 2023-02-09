@@ -1,0 +1,72 @@
+@import "../../assets/constants/colors.scss";
+
+.container {
+    position: fixed;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0px 0px 10px 10px;
+    height: auto;
+}
+
+.cardLogin {
+    margin: 0;
+    min-width: 300px;
+    width: 300px;
+    height: auto;
+    min-height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border-radius: 0px 0px 10px 10px !important;
+    border: 0px !important;
+
+}
+.logoLogin {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $corPrimaria;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: -70px;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1 !important;
+    vertical-align: top;
+}
+
+.logoTitle {
+    margin-left: 10px;
+    color: $corTextoClaro;
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+
+.inputsWrapper {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+    margin-top: 10px;
+    //margin: 90px 5% 20px;
+}
+
+
+.textField {
+    margin-bottom: 10px !important;
+};

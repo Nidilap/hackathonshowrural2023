@@ -1,4 +1,5 @@
 import Axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import { getCookieFromBrowser } from "./AuthUtils";
 // import { getCookieFromBrowser } from "./AuthUtils";
 import { axiosErrorProcessor, genericErrorProcessor } from "./ErrorUtils";
 // import { getValor } from "./SecureStorage";
@@ -6,8 +7,8 @@ import { axiosErrorProcessor, genericErrorProcessor } from "./ErrorUtils";
 
 const axiosInstance = async () => {
     let internalHeaders = { 'Content-Type': 'application/json', Authorization: '', 'X-Requested-With': 'XMLHttpRequest' }
-    // let token = getCookieFromBrowser("token");
-    let token = ''; // Excluir isso depois.
+    let token = getCookieFromBrowser("token");
+    // let token = ''; // Excluir isso depois.
 
     if (token != null && token.length > 0)
         internalHeaders.Authorization = `Bearer ${token}`;

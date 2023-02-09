@@ -1,0 +1,37 @@
+@import '../../../assets/constants/colors.scss';
+
+.iconeWrapper {
+    background-color: $botaoPrimario;
+    height: 80px;
+    width: 80px;
+    border-radius: 20px;
+    overflow: hidden;
+    border-color: $corPrimaria;
+    border-width: 1.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxWrapper {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: "30%";
+    padding: 8px;
+    flex-direction: column;
+}
+
+.tituloIcone {
+    color: $corTextoEscuro;
+    text-align: center;
+    padding-top: 2px;
+    font-size: 15px !important;
+    font-weight: bold !important;
+}
+
+.icone {
+    width: 40px !important;
+    height: 40px !important;
+    color: $corPrimaria;
+}

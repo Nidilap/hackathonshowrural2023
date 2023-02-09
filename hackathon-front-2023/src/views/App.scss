@@ -1,0 +1,25 @@
+@import "../assets/constants/colors.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.negrito {
+  font-weight: 700;
+}
+
+.dangerButton {
+  background-color: $danger;
+}

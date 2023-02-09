@@ -1,0 +1,22 @@
+@import '../../../../assets/constants/colors.scss';
+
+.drawer {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: $corPrimaria;
+}
+
+.drawerPaper {
+    width: 240px,
+}
+
+.drawerHeader {
+    display: "flex";
+    align-items: "center";  
+    margin-left: "1vw";
+    justify-content: "space-between"
+}
+
+.botaoAcessar {
+    margin: 20px 15px 0 !important;
+}

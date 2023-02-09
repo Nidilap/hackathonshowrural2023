@@ -7,7 +7,7 @@ const isExistente = (variavel: any) => {
 }
 
 const isVazio = (variavel: any) => {
-    if (variavel == undefined || variavel == null || variavel == "") {
+    if (variavel === undefined || variavel === null || variavel === "") {
         return true
     } else {
         return false;
@@ -48,7 +48,7 @@ const pushSafe = (arrayOriginal: Array<any>, itemToPush: any): any[] => {
     // Realiza um push que funciona também para variáveis que não foram inicializadas (undefined).
     if (arrayOriginal instanceof Array) {
         arrayOriginal.push(itemToPush);
-    } else if (arrayOriginal == undefined) {
+    } else if (arrayOriginal === undefined) {
         arrayOriginal = [itemToPush];
     } else {
         console.log(`Variável: ${arrayOriginal} não pode ter um push! Função pushSafe().`);
@@ -56,6 +56,19 @@ const pushSafe = (arrayOriginal: Array<any>, itemToPush: any): any[] => {
     return arrayOriginal;
 }
 
+const obterDadosDecodadosTokenJWT = (token: string) => {
+    if (token) {
+        var base64Url = token.split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(atob(base64).split('').map((c) => {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+    } else {
+        return null;
+    }
+
+}
 
 export {
     isExistente,
@@ -66,5 +79,6 @@ export {
     getPropriedadesNomes,
     getOfflineId,
     createUUIDSmall,
-    pushSafe
+    pushSafe,
+    obterDadosDecodadosTokenJWT
 };

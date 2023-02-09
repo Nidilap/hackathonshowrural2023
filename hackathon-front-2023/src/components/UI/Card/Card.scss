@@ -1,0 +1,9 @@
+@import '../../../assets/constants/colors.scss';
+
+.cardWrapper {
+    padding: 10px;
+    background-color: $backgroundWhite;
+    border-radius: 10px;
+    border: 2px solid $borderPadrao;
+    width: fit-content;
+}

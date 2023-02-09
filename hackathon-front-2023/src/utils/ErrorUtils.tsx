@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const axiosErrorProcessor = (error: AxiosError) => {
 
-    if (error.message == "Network Error" || error.message == "TIMEOUT") {
+    if (error.message === "Network Error" || error.message === "TIMEOUT") {
         switch (error.message) {
             case "Network Error":
                 genericErrorProcessor(new Error("Ocorreu um erro de conexão."));
@@ -18,7 +18,7 @@ const axiosErrorProcessor = (error: AxiosError) => {
         return;
     }
 
-    if (error.response?.status != 404) {
+    if (error.response?.status !== 404) {
 
         // @ts-ignore
         let errosArray: IError[] = (error?.response?.data?.erros ?? []) as IError[];
@@ -41,7 +41,9 @@ const axiosErrorProcessor = (error: AxiosError) => {
 
 };
 
-const mostrarModal = (mensagem: string) => toast.error(`Ocorreu um erro! ${mensagem}`, {position: 'top-center'});
+const mostrarModal = (mensagem: string) => {
+    toast.error(`Ocorreu um erro! ${mensagem}`, {position: 'top-center'})
+};
 
 const genericErrorProcessor = (error: Error) => {
 
