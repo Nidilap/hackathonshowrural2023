@@ -1,2 +1,2 @@
-# hackathonshowrural2023
-Hack show rural 2023
+# Hackathon Show Rural Coopavel 2023
+Hack Show Rural 2023
