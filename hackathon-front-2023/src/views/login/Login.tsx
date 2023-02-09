@@ -53,7 +53,7 @@ const Login = () => {
   };
 
   return (
-    <Layout headerInvisivel={true}>
+    <Layout headerInvisivel={true} tabbarInvisivel={false}>
       <div className="container">
         <div className="logoLogin">
           <img src={logo} width={50} height={50} alt="Logo" />
