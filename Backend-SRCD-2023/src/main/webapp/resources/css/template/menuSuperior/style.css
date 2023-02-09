@@ -1,0 +1,49 @@
+/* Menu Superior */
+.skin-blue .main-header .logo {
+    background-color: var(--cor-primaria);
+}
+
+.skin-blue .main-header .navbar {
+    background-color: var(--cor-primaria);
+}
+
+.skin-blue .main-header .logo:hover {
+    background-color: var(--cor-quarternaria);
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+    background-color: var(--cor-quarternaria);
+}
+
+/* Usuário */
+.ui-menubar.menuBarUsuario {
+    border: 0px !important;
+    background-color: transparent;
+}
+
+.submenu-usuario > a.ui-menuitem-link.ui-submenu-link {
+    font-size: var(--fonte-grande);
+    color: var(--cor-branca) !important;
+}
+
+.submenu-usuario .ui-icon.ui-icon-triangle-1-s {  /* Esconde a seta pra baixo */
+    display: none !important;
+}
+
+.submenu-usuario .ui-menuitem-icon.ui-icon.fa.fa-user-circle { /* Aumenta espaço do ícone de usuário */
+    top: -1px !important;
+    width: var(--fonte-grande) !important;
+    height: var(--fonte-grande) !important;
+}
+
+.submenu-usuario .ui-menuitem-icon.ui-icon.fa.fa-user-circle::before { /* Aumenta fonte do ícone de usuário */
+    font-size: var(--fonte-grande) !important;
+}
+
+.submenu-usuario > a.ui-menuitem-link.ui-submenu-link:hover, .submenu-usuario:hover {
+    background-color: var(--cor-quarternaria) !important;
+}
+
+li.ui-menuitem-active.submenu-usuario {
+	background-color: var(--cor-quarternaria) !important;
+}

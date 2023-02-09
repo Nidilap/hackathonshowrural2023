@@ -1,0 +1,6 @@
+/* Opacidade de campo desabilitado */
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: 0.80;
+    filter: alpha(opacity = 35);
+    background-image: none;
+}

@@ -1,0 +1,920 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="pedro (generated)" id="1675623764973-2">
+        <createSequence incrementBy="1" sequenceName="seq_anexo" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-3">
+        <createSequence incrementBy="1" sequenceName="seq_cidade" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-4">
+        <createSequence incrementBy="1" sequenceName="seq_contato" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-5">
+        <createSequence incrementBy="1" sequenceName="seq_empresa" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-6">
+        <createSequence incrementBy="1" sequenceName="seq_endereco" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-7">
+        <createSequence incrementBy="1" sequenceName="seq_estado" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-8">
+        <createSequence incrementBy="1" sequenceName="seq_localizacao" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-9">
+        <createSequence incrementBy="1" sequenceName="seq_pais" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-10">
+        <createSequence incrementBy="1" sequenceName="seq_parametro" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-11">
+        <createSequence incrementBy="1" sequenceName="seq_perfil" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-12">
+        <createSequence incrementBy="1" sequenceName="seq_perfil_tela" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-13">
+        <createSequence incrementBy="1" sequenceName="seq_pessoa" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-14">
+        <createSequence incrementBy="1" sequenceName="seq_pessoa_contato" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-15">
+        <createSequence incrementBy="1" sequenceName="seq_usuario" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-16">
+        <createSequence incrementBy="1" sequenceName="seq_usuario_perfil" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-17">
+        <createSequence incrementBy="1" sequenceName="seq_usuario_tela" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-19">
+        <createTable tableName="anexo">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="anexoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="conteudo" type="BYTEA">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tamanho" type="BIGINT"/>
+            <column name="tipo" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-20">
+        <createTable tableName="anexo_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="anexo_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="anexo_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="conteudo" type="BYTEA"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="tamanho" type="BIGINT"/>
+            <column name="tipo" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-21">
+        <createTable tableName="cidade">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="cidadePK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="codigo_municipio" type="INTEGER"/>
+            <column name="ibge" type="INTEGER"/>
+            <column name="latitude" type="FLOAT8"/>
+            <column name="longitude" type="FLOAT8"/>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_estado" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-22">
+        <createTable tableName="cidade_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="cidade_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="cidade_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="codigo_municipio" type="INTEGER"/>
+            <column name="ibge" type="INTEGER"/>
+            <column name="latitude" type="FLOAT8"/>
+            <column name="longitude" type="FLOAT8"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="id_estado" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-23">
+        <createTable tableName="contato">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="contatoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="celular" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="observacao" type="TEXT"/>
+            <column name="telefone" type="VARCHAR(20)"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-24">
+        <createTable tableName="contato_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="contato_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="contato_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="celular" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="telefone" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-25">
+        <createTable tableName="empresa">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="empresaPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="codigo" type="VARCHAR(20)"/>
+            <column name="is_ativo" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_matriz" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-26">
+        <createTable tableName="empresa_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="empresa_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="empresa_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="codigo" type="VARCHAR(20)"/>
+            <column name="is_ativo" type="BOOLEAN"/>
+            <column name="is_matriz" type="BOOLEAN"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-27">
+        <createTable tableName="endereco">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="enderecoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="bairro" type="VARCHAR(255)"/>
+            <column name="cep" type="VARCHAR(20)"/>
+            <column name="complemento" type="VARCHAR(20)"/>
+            <column name="endereco" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="inscricao_estadual" type="VARCHAR(20)"/>
+            <column name="inscricao_municipal" type="VARCHAR(20)"/>
+            <column name="is_ativo" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="is_principal" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="numero" type="INTEGER"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_cidade" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-28">
+        <createTable tableName="endereco_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="endereco_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="endereco_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="bairro" type="VARCHAR(255)"/>
+            <column name="cep" type="VARCHAR(20)"/>
+            <column name="complemento" type="VARCHAR(20)"/>
+            <column name="endereco" type="VARCHAR(255)"/>
+            <column name="inscricao_estadual" type="VARCHAR(20)"/>
+            <column name="inscricao_municipal" type="VARCHAR(20)"/>
+            <column name="is_ativo" type="BOOLEAN"/>
+            <column name="is_principal" type="BOOLEAN"/>
+            <column name="numero" type="INTEGER"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="id_cidade" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-29">
+        <createTable tableName="estado">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estadoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="ddd" type="VARCHAR(255)"/>
+            <column name="ibge" type="INTEGER"/>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uf" type="VARCHAR(10)"/>
+            <column name="id_pais" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-30">
+        <createTable tableName="estado_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estado_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="estado_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="ddd" type="VARCHAR(255)"/>
+            <column name="ibge" type="INTEGER"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="uf" type="VARCHAR(10)"/>
+            <column name="id_pais" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-31">
+        <createTable tableName="localizacao">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="localizacaoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="coordenada" type="BYTEA"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-32">
+        <createTable tableName="localizacao_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="localizacao_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="localizacao_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="coordenada" type="BYTEA"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-33">
+        <createTable tableName="pais">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="paisPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="bacen" type="INTEGER"/>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome_pt" type="VARCHAR(255)"/>
+            <column name="sigla" type="VARCHAR(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-34">
+        <createTable tableName="pais_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pais_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pais_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="bacen" type="INTEGER"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="nome_pt" type="VARCHAR(255)"/>
+            <column name="sigla" type="VARCHAR(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-35">
+        <createTable tableName="parametro">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="parametroPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="is_registro_lista" type="BOOLEAN"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="parametro" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valor" type="VARCHAR(255)"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_empresa" type="BIGINT"/>
+            <column name="id_parametro" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-36">
+        <createTable tableName="parametro_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="parametro_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="parametro_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="is_registro_lista" type="BOOLEAN"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="parametro" type="VARCHAR(255)"/>
+            <column name="valor" type="VARCHAR(255)"/>
+            <column name="id_empresa" type="BIGINT"/>
+            <column name="id_parametro" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-37">
+        <createTable tableName="perfil">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="perfilPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="observacao" type="TEXT"/>
+            <column name="perfil" type="VARCHAR(10)"/>
+            <column name="sigla" type="VARCHAR(10)"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-38">
+        <createTable tableName="perfil_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="perfil_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="perfil_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="perfil" type="VARCHAR(10)"/>
+            <column name="sigla" type="VARCHAR(10)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-39">
+        <createTable tableName="perfil_tela">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="perfil_telaPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="tela" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_perfil" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-40">
+        <createTable tableName="perfil_tela_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="perfil_tela_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="perfil_tela_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="tela" type="VARCHAR(255)"/>
+            <column name="id_perfil" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-41">
+        <createTable tableName="pessoa">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoaPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="atividade" type="VARCHAR(255)"/>
+            <column name="celular" type="VARCHAR(20)"/>
+            <column name="cpf_cnpj" type="VARCHAR(20)"/>
+            <column name="data_hora_nascimento" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="estado_civil" type="VARCHAR(10)"/>
+            <column name="is_ativo" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome_fantasia" type="VARCHAR(255)"/>
+            <column name="nome_mae" type="VARCHAR(255)"/>
+            <column name="nome_pai" type="VARCHAR(255)"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="razao_social" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="rg" type="VARCHAR(20)"/>
+            <column name="telefone" type="VARCHAR(20)"/>
+            <column name="tipo_pessoa" type="VARCHAR(10)"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_foto" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-42">
+        <createTable tableName="pessoa_anexo">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_anexoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_anexo" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-43">
+        <createTable tableName="pessoa_anexo_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_anexo_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_anexo_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="id_anexo" type="BIGINT"/>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-44">
+        <createTable tableName="pessoa_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="atividade" type="VARCHAR(255)"/>
+            <column name="celular" type="VARCHAR(20)"/>
+            <column name="cpf_cnpj" type="VARCHAR(20)"/>
+            <column name="data_hora_nascimento" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="estado_civil" type="VARCHAR(10)"/>
+            <column name="is_ativo" type="BOOLEAN"/>
+            <column name="nome_fantasia" type="VARCHAR(255)"/>
+            <column name="nome_mae" type="VARCHAR(255)"/>
+            <column name="nome_pai" type="VARCHAR(255)"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="razao_social" type="VARCHAR(255)"/>
+            <column name="rg" type="VARCHAR(20)"/>
+            <column name="telefone" type="VARCHAR(20)"/>
+            <column name="tipo_pessoa" type="VARCHAR(10)"/>
+            <column name="id_foto" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-45">
+        <createTable tableName="pessoa_contato">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_contatoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_contato" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-46">
+        <createTable tableName="pessoa_contato_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_contato_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_contato_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="id_contato" type="BIGINT"/>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-47">
+        <createTable tableName="pessoa_endereco">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_enderecoPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_endereco" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-48">
+        <createTable tableName="pessoa_endereco_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_endereco_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pessoa_endereco_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="id_endereco" type="BIGINT"/>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-49">
+        <createTable tableName="usuario">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuarioPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="is_ativo" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="login" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="senha" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_foto" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-50">
+        <createTable tableName="usuario_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="is_ativo" type="BOOLEAN"/>
+            <column name="login" type="VARCHAR(20)"/>
+            <column name="nome" type="VARCHAR(255)"/>
+            <column name="senha" type="VARCHAR(20)"/>
+            <column name="id_foto" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-51">
+        <createTable tableName="usuario_perfil">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_perfilPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_perfil" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_usuario" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-52">
+        <createTable tableName="usuario_perfil_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_perfil_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_perfil_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="id_perfil" type="BIGINT"/>
+            <column name="id_usuario" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-53">
+        <createTable tableName="usuario_tela">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_telaPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="tela" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_usuario" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-54">
+        <createTable tableName="usuario_tela_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_tela_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="usuario_tela_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="tela" type="VARCHAR(255)"/>
+            <column name="id_usuario" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-55">
+        <addUniqueConstraint columnNames="id_pessoa" constraintName="UC_EMPRESAID_PESSOA_COL" tableName="empresa"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-56">
+        <addUniqueConstraint columnNames="nome" constraintName="UC_PERFILNOME_COL" tableName="perfil"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-57">
+        <addUniqueConstraint columnNames="cpf_cnpj" constraintName="UC_PESSOACPF_CNPJ_COL" tableName="pessoa"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-58">
+        <addUniqueConstraint columnNames="rg" constraintName="UC_PESSOARG_COL" tableName="pessoa"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-59">
+        <addUniqueConstraint columnNames="email" constraintName="UC_USUARIOEMAIL_COL" tableName="usuario"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-60">
+        <addUniqueConstraint columnNames="login" constraintName="UC_USUARIOLOGIN_COL" tableName="usuario"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-61">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="pessoa_anexo_aud" constraintName="FK2by9bujem83laqwu7oybyuwkp" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-62">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="empresa_aud" constraintName="FK2w5b453e6djel0kvivmhu3o1c" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-63">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="endereco_aud" constraintName="FK4ae9htv2tdjgqivrjosihdwgt" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-64">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="cidade_aud" constraintName="FK5qmbcwltt9x0w4jbnmdew5tks" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-65">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="pessoa_aud" constraintName="FK6c4qtwgldl76srqu6lofmyowa" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-66">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="pessoa_contato_aud" constraintName="FK7moc27b2g66niwq210dt54jio" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-67">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="perfil_tela_aud" constraintName="FK8wk0cvjwfdd19axtffxfwocl7" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-68">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="usuario_aud" constraintName="FKb4udgpaafsx6ibss7hbbbb100" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-69">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="usuario_perfil_aud" constraintName="FKbblnslnohms34py1b6gc0m84y" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-70">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="localizacao_aud" constraintName="FKc9c5kbuqob18uyxkr9w1gjj5a" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-71">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="pessoa_endereco_aud" constraintName="FKco8qye3ttq4tcrm8qlhwa78r3" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-72">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="parametro_aud" constraintName="FKj0ewi0aqem69k7snta8mjnxwe" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-73">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="pais_aud" constraintName="FKj28o9671g96af56sqvssvsvjr" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-74">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="perfil_aud" constraintName="FKj902dsj801pm794mbpkjyyvmd" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-75">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="contato_aud" constraintName="FKjkvl5wxje5r735gogv3ihkij9" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-76">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="estado_aud" constraintName="FKludja7fpqsy4d4jhkk7oc96a6" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-77">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="anexo_aud" constraintName="FKofr5odkxsm0ymut3u784bkk7" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-78">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="usuario_tela_aud" constraintName="FKq4g7a25qfgbyfgxct093lupdb" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-79">
+        <addForeignKeyConstraint baseColumnNames="id_estado" baseTableName="cidade" constraintName="fk_cidade_estado" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="estado" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-80">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="empresa" constraintName="fk_empresa_pessoa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pessoa" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-81">
+        <addForeignKeyConstraint baseColumnNames="id_cidade" baseTableName="endereco" constraintName="fk_endereco_cidade" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cidade" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-82">
+        <addForeignKeyConstraint baseColumnNames="id_pais" baseTableName="estado" constraintName="fk_estado_pais" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pais" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-83">
+        <addForeignKeyConstraint baseColumnNames="id_empresa" baseTableName="parametro" constraintName="fk_parametro_empresa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="empresa" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-84">
+        <addForeignKeyConstraint baseColumnNames="id_parametro" baseTableName="parametro" constraintName="fk_parametro_parametro" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="parametro" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-85">
+        <addForeignKeyConstraint baseColumnNames="id_perfil" baseTableName="perfil_tela" constraintName="fk_perfil_tela_perfil" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="perfil" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-86">
+        <addForeignKeyConstraint baseColumnNames="id_anexo" baseTableName="pessoa_anexo" constraintName="fk_pessoa_anexo_anexo" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="anexo" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-87">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="pessoa_anexo" constraintName="fk_pessoa_anexo_pessoa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pessoa" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-88">
+        <addForeignKeyConstraint baseColumnNames="id_contato" baseTableName="pessoa_contato" constraintName="fk_pessoa_contato_contato" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="contato" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-89">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="pessoa_contato" constraintName="fk_pessoa_contato_pessoa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pessoa" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-90">
+        <addForeignKeyConstraint baseColumnNames="id_endereco" baseTableName="pessoa_endereco" constraintName="fk_pessoa_endereco_endereco" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="endereco" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-91">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="pessoa_endereco" constraintName="fk_pessoa_endereco_pessoa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pessoa" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-92">
+        <addForeignKeyConstraint baseColumnNames="id_foto" baseTableName="pessoa" constraintName="fk_pessoa_foto" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="anexo" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-93">
+        <addForeignKeyConstraint baseColumnNames="id_foto" baseTableName="usuario" constraintName="fk_usuario_foto" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="anexo" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-94">
+        <addForeignKeyConstraint baseColumnNames="id_perfil" baseTableName="usuario_perfil" constraintName="fk_usuario_perfil_perfil" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="perfil" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-95">
+        <addForeignKeyConstraint baseColumnNames="id_usuario" baseTableName="usuario_perfil" constraintName="fk_usuario_perfil_usuario" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675623764973-96">
+        <addForeignKeyConstraint baseColumnNames="id_usuario" baseTableName="usuario_tela" constraintName="fk_usuario_tela_usuario" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

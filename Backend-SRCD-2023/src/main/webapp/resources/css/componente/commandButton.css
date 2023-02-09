@@ -1,0 +1,14 @@
+/* Alteração do formato padrão */
+.btn-primary {
+    background-color: VAR(--cor-primaria) !important;
+}
+
+button.ui-button.btn-primary:hover, button.ui-button.btn-primary.ui-state-hover {
+    background-color: VAR(--cor-primaria) !important;
+    opacity: 0.7 !important;
+}
+
+button.ui-button.btn-primary:focus, button.ui-button.btn-primary.ui-state-focus {
+    background-color: VAR(--cor-primaria) !important;
+    opacity: 0.7 !important;
+}
