@@ -1,0 +1,27 @@
+$corPrimaria: #029049;
+$corPrimariaDark: #01361b;
+$corSecundaria: #fff;
+
+$corTextoEscuro: #2d2d2d;
+$corTextoCinza: #55595C;
+$corTextoCinzaClaro: #707070;
+$corTextoClaro: #fff;
+
+$botaoPrimario: #f9f9f9;
+$borderPadrao: #d5d5d5;
+$danger: #cf142b;
+$success: #029049;
+$alert: #FFC107;
+
+$backgroundGray: #ECEEEF;
+$backgroundWhite: #fff;
+
+$corTransparentePreto04: rgba(0, 0, 0, 0.4);
+$corTransparentePreto06: rgba(0, 0, 0, 0.6);
+$corTransparentePreto08: rgba(0, 0, 0, 0.8);
+
+:export {
+    corPrimaria: $corPrimaria;
+    corSecundaria: $corSecundaria;
+    danger: $danger;
+}
