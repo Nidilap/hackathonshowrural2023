@@ -1,18 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../../../components/UI/Layout/Layout';
 import './AgendaCadastroScreen.scss';
 import CustomButton from '../../../components/UI/Button/Button';
 import { TextField } from '@mui/material';
 import Select from 'react-select';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { useAppDispatch } from '../../../store/configs/hooks';
+import { fetchPessoas } from '../../../store/features/pessoa';
 
 
 const AgendaCadastroScreen = () => {
-    // const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
-    // useEffect(() => {
-    //     dispatch(fetchLotes());
-    // }, [])
+    useEffect(() => {
+        dispatch(fetchPessoas());
+    }, [])
 
     const optionsNome: any = [
         { value: '1', label: 'Mateus' },
@@ -46,7 +48,7 @@ const AgendaCadastroScreen = () => {
                     }}
                     options={optionsNome}
                     className="inputAgenda"
-                    styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
+                    styles={{ menuPortal: base => ({ ...base, zIndex: 99999 }) }}
                 />
 
                 <DateTimePicker
@@ -56,7 +58,7 @@ const AgendaCadastroScreen = () => {
                     onChange={(newValue: any) => {
                         setDataVisita(newValue);
                     }}
-                    className="inputAgenda"
+                    className="inputAgenda data"
                 />
                 <TextField
                     className="inputAgenda"

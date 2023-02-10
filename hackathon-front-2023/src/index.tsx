@@ -19,16 +19,20 @@ import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 // PWA Configs
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
+//Locale
 import { LocalizationProvider } from '@mui/x-date-pickers';
+import 'moment/locale/pt-br'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+const locale = 'pt-br';
 
 root.render(
     <ThemeProvider theme={theme}>
-      <LocalizationProvider dateAdapter={AdapterMoment}>
+      <LocalizationProvider dateAdapter={AdapterMoment} locale={locale}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <App />

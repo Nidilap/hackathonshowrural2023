@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 //Redux - reducers
 import { authReducer } from "../features/auth";
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import { pessoaReducer } from "../features/pessoa";
 
 import { persistReducer } from "redux-persist";
 
@@ -13,7 +14,8 @@ const authConfig = {
 };
 
 const rootReducer = combineReducers({
-  auth: persistReducer(authConfig, authReducer)
+  auth: persistReducer(authConfig, authReducer),
+  pessoa: pessoaReducer
 } as Istore);
 
 interface Istore {
