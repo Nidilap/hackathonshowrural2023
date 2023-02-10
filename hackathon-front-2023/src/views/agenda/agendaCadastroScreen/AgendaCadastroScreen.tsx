@@ -3,44 +3,80 @@ import Layout from '../../../components/UI/Layout/Layout';
 import './AgendaCadastroScreen.scss';
 import CustomButton from '../../../components/UI/Button/Button';
 import { TextField } from '@mui/material';
-import Select from 'react-select';
+import AsyncSelect from 'react-select/async';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { useAppDispatch } from '../../../store/configs/hooks';
-import { fetchPessoas } from '../../../store/features/pessoa';
+import { useAppDispatch, useAppSelector } from '../../../store/configs/hooks';
+import { cadastrarVisita, fetchPessoas } from '../../../store/features/pessoa';
+import Pessoa from '../../../models/redux/pessoa';
 
+// Alert
+import { toast } from "react-toastify";
 
 const AgendaCadastroScreen = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(fetchPessoas());
+
     }, [])
 
-    const optionsNome: any = [
-        { value: '1', label: 'Mateus' },
-        { value: '2', label: 'Pedro' },
-        { value: '3', label: 'Odete' },
-    ];
 
-    const optionsEndereco: any = [
-        { value: '1', label: 'anchieta' },
-        { value: '2', label: 'padre' },
-        { value: '3', label: 'carvalho' },
-    ];
+    const selector = useAppSelector((state: any) => state.root.pessoa);
+    console.log(selector);
+    let optionsNome: any = [];
 
-    const [nomePessoa, setNomePessoa] = useState("");
+    const [nomePessoa, setNomePessoa] = useState<any>({value: "", label: ""});
     const [dataVisita, setDataVisita] = useState(new Date());
     const [enderecoVisita, setEnderecoVisita] = useState("");
     const [observacao, setObservacao] = useState("");
 
-    const cadastrar = () => {
+    useEffect(() => {
+        if(selector.pessoas && selector.pessoas.length > 0) {
+            let pessoaAtual: Pessoa = selector.pessoas.find((pessoa: Pessoa) => pessoa.idPessoa == nomePessoa.value)
+            if(pessoaAtual?.enderecos && pessoaAtual.enderecos.length > 0) {
+                setEnderecoVisita(pessoaAtual.enderecos[0].car)
+            }
+            
+        }
+    }, [nomePessoa]);
 
+    const getPessoasClientes = async (input: any) => {
+        await dispatch(fetchPessoas());
+        let optionsNome: any = [];
+        if (selector.pessoas && selector.pessoas.length > 0) {
+            selector.pessoas.map((pessoa: Pessoa) => {
+                if (pessoa.razaoSocial !== "PESSOA DESCONHECIDA") {
+                    optionsNome.push({ value: pessoa.idPessoa, label: pessoa.razaoSocial })
+                }
+            })
+        }
+        return optionsNome;
+    }
+
+    const cadastrar = (e: any) => {
+        e.preventDefault();
+        if (nomePessoa && dataVisita && enderecoVisita) {
+            let pessoaAtual: Pessoa = selector.pessoas.find((pessoa: Pessoa) => pessoa.idPessoa == nomePessoa.value)
+            if(pessoaAtual?.enderecos && pessoaAtual.enderecos.length > 0) {
+                
+                dispatch(cadastrarVisita({ 
+                    idPessoa: pessoaAtual.idPessoa,
+                    idEndereco: pessoaAtual.enderecos[0].idEndereco,
+                    dataAgendada: dataVisita,
+                    observacao: observacao
+                }));
+            }
+
+        } else {
+          toast.error("Preencha os dados para cadastrar!", {
+            position: "top-center",
+          });
+        }
     }
 
     return (
         <Layout headerTitle='AGENDA' botaoVoltar={true}>
             <form className="inputsWrapperAgenda" onSubmit={cadastrar}>
-                <Select
+                <AsyncSelect
                     placeholder="Nome"
                     value={nomePessoa}
                     onChange={(valor: any) => {
@@ -48,7 +84,14 @@ const AgendaCadastroScreen = () => {
                     }}
                     options={optionsNome}
                     className="inputAgenda"
-                    styles={{ menuPortal: base => ({ ...base, zIndex: 99999 }) }}
+                    defaultOptions
+                    loadOptions={(e) => getPessoasClientes(e)}
+                    
+                    styles={{
+                        // Fixes the overlapping problem of the component
+                        menu: provided => ({ ...provided, zIndex: 9999 })
+                    }}
+
                 />
 
                 <DateTimePicker
@@ -59,6 +102,17 @@ const AgendaCadastroScreen = () => {
                         setDataVisita(newValue);
                     }}
                     className="inputAgenda data"
+                />
+                <TextField
+                    className="inputAgenda"
+                    id="enderecoInput"
+                    label="Endereço"
+                    variant="outlined"
+                    value={enderecoVisita}
+                    onChange={(e) => {
+                        setEnderecoVisita(e.target.value);
+                    }}
+                    disabled={true}
                 />
                 <TextField
                     className="inputAgenda"
@@ -74,7 +128,7 @@ const AgendaCadastroScreen = () => {
                     maxRows={4}
                 />
                 <CustomButton className="botaoAcessar" type="submit">
-                    ACESSAR
+                    AGENDAR
                 </CustomButton>
                 {/* <Typography variant="caption" display="block" align="center">
                     <Checkbox
