@@ -11,9 +11,4 @@ export default class ApiClienteEndPoint {
         return `${APISysAgro.getServidor()}/pessoas/${idPessoa}/visitas`;
     }
 
-    //#region GET/POST
-    getListaVisitas() {
-        return `${APISysAgro.getServidor()}/visitas`;
-    }
-
 }

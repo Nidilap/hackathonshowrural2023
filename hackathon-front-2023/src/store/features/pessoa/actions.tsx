@@ -51,7 +51,7 @@ const cadastrarVisita = createAsyncThunk('pessoa/cadastrarVisita',
         try {
             const state: RootState = thunkApi.getState();
 
-            const resData = await axiosPost(APISysAgroLinks.ClienteEndPoints.getListaVisitas(), {
+            const resData = await axiosPost(APISysAgroLinks.VisitaEndPoints.getListaVisitas(), {
                 idFuncionario: state.root.auth.idUsuario,
                 idPessoa: visitaProps.idPessoa,
                 idEndereco: visitaProps.idEndereco,
@@ -62,7 +62,7 @@ const cadastrarVisita = createAsyncThunk('pessoa/cadastrarVisita',
             toast.success("Agendamento feito com sucesso!", {
                 position: "top-center",
               });
-            thunkApi.dispatch(push("/"));
+            thunkApi.dispatch(push("/agenda"));
         } catch (error: any) {
             return thunkApi.rejectWithValue(error.response.data);
         }
