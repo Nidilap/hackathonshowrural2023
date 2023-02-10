@@ -25,7 +25,7 @@ export default function MainTabbar() {
 
     // TSX
     return (
-        <Box sx={{ width: '100%', bgcolor: '#029049', position: 'fixed', bottom: 0, borderTop: '1px solid #ccc' }}>
+        <Box sx={{ width: '100%', bgcolor: '#029049', position: 'fixed', bottom: 0, borderTop: '1px solid #ccc', zIndex: 10 }}>
             <Tabs value={value} centered>
                 {renderButtons()}
             </Tabs>
