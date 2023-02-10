@@ -45,7 +45,7 @@ public class VisitaDAO extends AbstratoDAO<Visita> implements Serializable {
         if (Objects.nonNull(idFuncionario)) {
             sql.append("   AND func.id = (:idFuncionario) \n");
         }
-        if (Objects.nonNull(idFuncionario)) {
+        if (Objects.nonNull(idPessoa)) {
             sql.append("   AND pess.id = (:idPessoa) \n");
         }
         sql.append(" ORDER BY pess.razaoSocial, vis.dataHoraCriacao \n");
@@ -54,7 +54,7 @@ public class VisitaDAO extends AbstratoDAO<Visita> implements Serializable {
         if (Objects.nonNull(idFuncionario)) {
             query.setParameter("idFuncionario", idFuncionario);
         }
-        if (Objects.nonNull(idFuncionario)) {
+        if (Objects.nonNull(idPessoa)) {
             query.setParameter("idPessoa", idPessoa);
         }
         return query.getResultList();
