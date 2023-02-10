@@ -1,0 +1,183 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="pedro (generated)" id="1675966067246-1">
+        <addColumn tableName="endereco">
+            <column name="id_localizacao" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966067246-2">
+        <addColumn tableName="endereco_aud">
+            <column name="id_localizacao" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966067246-3">
+        <addForeignKeyConstraint baseColumnNames="id_localizacao" baseTableName="endereco" constraintName="fk_endereco_localizacao" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="localizacao" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966311698-5">
+        <addColumn tableName="pessoa">
+            <column name="is_cliente" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966311698-6">
+        <addColumn tableName="pessoa_aud">
+            <column name="is_cliente" type="boolean"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966311698-7">
+        <addColumn tableName="pessoa">
+            <column name="is_fornecedor" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966311698-8">
+        <addColumn tableName="pessoa_aud">
+            <column name="is_fornecedor" type="boolean"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966311698-9">
+        <addColumn tableName="pessoa">
+            <column name="is_funcionario" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675966311698-10">
+        <addColumn tableName="pessoa_aud">
+            <column name="is_funcionario" type="boolean"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-5">
+        <createSequence incrementBy="1" sequenceName="seq_solicitacao_pessoa" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-6">
+        <createSequence incrementBy="1" sequenceName="seq_visita" startValue="1"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-7">
+        <createTable tableName="solicitacao_pessoa">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="solicitacao_pessoaPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_endereco" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-8">
+        <createTable tableName="solicitacao_pessoa_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="solicitacao_pessoa_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="solicitacao_pessoa_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="id_endereco" type="BIGINT"/>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-9">
+        <createTable tableName="visita">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="visitaPK"/>
+            </column>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="data_agendada" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="versao" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_check_in" type="BIGINT"/>
+            <column name="id_check_out" type="BIGINT"/>
+            <column name="id_endereco" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_funcionario" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-10">
+        <createTable tableName="visita_aud">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="visita_audPK"/>
+            </column>
+            <column name="REV" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="visita_audPK"/>
+            </column>
+            <column name="REVTYPE" type="SMALLINT"/>
+            <column name="data_hora_atualizacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="data_hora_criacao" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="usuario_atualizacao" type="BIGINT"/>
+            <column name="usuario_criacao" type="BIGINT"/>
+            <column name="data_agendada" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="observacao" type="TEXT"/>
+            <column name="id_check_in" type="BIGINT"/>
+            <column name="id_check_out" type="BIGINT"/>
+            <column name="id_endereco" type="BIGINT"/>
+            <column name="id_funcionario" type="BIGINT"/>
+            <column name="id_pessoa" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-11">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="solicitacao_pessoa_aud" constraintName="FK8wbfjjwiwjts0ai2wtoq5wa5t" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-12">
+        <addForeignKeyConstraint baseColumnNames="REV" baseTableName="visita_aud" constraintName="FKqybi3f1cpjyuejya789s7t9e6" deferrable="false" initiallyDeferred="false" referencedColumnNames="REV" referencedTableName="REVINFO" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-13">
+        <addForeignKeyConstraint baseColumnNames="id_endereco" baseTableName="solicitacao_pessoa" constraintName="fk_solicitacao_pessoa_endereco" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="endereco" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-14">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="solicitacao_pessoa" constraintName="fk_solicitacao_pessoa_pessoa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pessoa" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-15">
+        <addForeignKeyConstraint baseColumnNames="id_check_in" baseTableName="visita" constraintName="fk_visita_check_in" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="localizacao" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-16">
+        <addForeignKeyConstraint baseColumnNames="id_check_out" baseTableName="visita" constraintName="fk_visita_check_out" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="localizacao" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-17">
+        <addForeignKeyConstraint baseColumnNames="id_endereco" baseTableName="visita" constraintName="fk_visita_endereco" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="endereco" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-18">
+        <addForeignKeyConstraint baseColumnNames="id_funcionario" baseTableName="visita" constraintName="fk_visita_funcionario" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="usuario" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675969771204-19">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="visita" constraintName="fk_visita_pessoa" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pessoa" validate="true"/>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675986388688-5">
+        <addColumn tableName="endereco">
+            <column name="car" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="pedro (generated)" id="1675986388688-6">
+        <addColumn tableName="endereco_aud">
+            <column name="car" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

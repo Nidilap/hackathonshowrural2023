@@ -1,0 +1,497 @@
+[
+    {
+        "area_preservacao_permanente": 0,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-215D13DF04404668959D6FB1CBB7FBE6",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 4.8555,
+            "modulos_fiscais": 0.2697,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°59'14,85\" S",
+            "endereco_longitude": "53°21'51,62\" O",
+            "registro_data": "31/01/2018",
+            "analise_data": null,
+            "retificacao_data": "31/01/2018"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 0,
+            "area_legal_declarada": 0
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 4.78680922717846,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209191255/xmwMvHGdHWYhHS_Wop13pQWdsWgUEGxm/385a284584d97f3bb4cfbda65cd3549c_0_FfM.html"
+    },
+    {
+        "area_preservacao_permanente": 1.72995177144103,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-8159C00391FE464BA8A658D69EF7F5F9",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 35.6523,
+            "modulos_fiscais": 1.9807,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°57'33,17\" S",
+            "endereco_longitude": "53°09'39,83\" O",
+            "registro_data": "06/01/2016",
+            "analise_data": null,
+            "retificacao_data": "06/01/2016"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 4.0049,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 0,
+            "area_legal_declarada": 4.0049
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 28.2223426046818,
+            "area_servidao_administrativa": 1.50912074875622
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209192332/MiJxpnVrck-zN7XidyAhBTHlbJ3KEXdE/ad94f106dba40555cf9f10e239a607bd_0_e_A.html"
+    },
+    {
+        "area_preservacao_permanente": 0.868629428418155,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-EA6D7A742D8E4118BEC4AD47C80AA503",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 34.7787,
+            "modulos_fiscais": 1.9321,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°57'12,3\" S",
+            "endereco_longitude": "53°08'56,53\" O",
+            "registro_data": "06/01/2016",
+            "analise_data": null,
+            "retificacao_data": "06/01/2016"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 3.0529,
+            "area_legal_declarada": 3.0529
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 29.355339411254,
+            "area_servidao_administrativa": 1.42410660609079
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209192946/fkKdKVRro1gJs_-wupEsGvdrp1gJjmhO/b62a64a387eccecb7f5c1ddd4ad7115b_0_PUc.html"
+    },
+    {
+        "area_preservacao_permanente": 0,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-38BA58AE1BD049C4B4AB687BEB84C31C",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 30.4637,
+            "modulos_fiscais": 1.6924,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°48'54,13\" S",
+            "endereco_longitude": "53°29'5,73\" O",
+            "registro_data": "03/02/2021",
+            "analise_data": null,
+            "retificacao_data": "08/12/2021"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 2.0305,
+            "area_legal_declarada": 2.0305
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 2.03583419517992,
+            "area_uso": 27.5816527738736,
+            "area_servidao_administrativa": 0.725206173915658
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209195635/WfvOk_qnis5zrdVTz-WgAf_CSpOxjqzh/9881170e8874c654b798563c652accc3_0_Tj0.html"
+    },
+    {
+        "area_preservacao_permanente": 0.550292512119137,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-8EBDF5EC88AE4B83885B7F4476BD17D6",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 16.8506,
+            "modulos_fiscais": 0.9361,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°46'46,8\" S",
+            "endereco_longitude": "53°31'7,52\" O",
+            "registro_data": "16/04/2015",
+            "analise_data": null,
+            "retificacao_data": "18/01/2022"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 0.6439,
+            "area_legal_declarada": 0.6439
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0.643892499314249,
+            "area_uso": 15.036996662505,
+            "area_servidao_administrativa": 1.14199090357772
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209201145/7PvRyUbSYPhWNbxCBSeqRnvZh4SpTGnM/37efb63c77933c68c314564a180c72cb_0_49Q.html"
+    },
+    {
+        "area_preservacao_permanente": 0,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-8A027B4D2E9B42D99BE7476EC9BFE118",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 6.8833,
+            "modulos_fiscais": 0.3824,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "25°02'54,53\" S",
+            "endereco_longitude": "53°22'4,43\" O",
+            "registro_data": "05/07/2017",
+            "analise_data": null,
+            "retificacao_data": "08/07/2019"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 2.175,
+            "area_legal_declarada": 2.175
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 4.72764488718957,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209203523/vrN1LoYp0k3tAtclv9jPLH-w4x3JT0dI/901d829fa9ffe9330c9d128a64980dee_0_L1U.html"
+    },
+    {
+        "area_preservacao_permanente": 0.12379432334723,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-511782C31F6246BD9AF634E0687223D1",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 1.212,
+            "modulos_fiscais": 0.0673,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°57'46,52\" S",
+            "endereco_longitude": "53°14'30,35\" O",
+            "registro_data": "30/07/2018",
+            "analise_data": null,
+            "retificacao_data": "30/07/2018"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 0.1858,
+            "area_legal_declarada": 0.1858
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 0.982137870003935,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209203621/Za4DTcy3tekFr7BpfX5dF5L_xRXEMKbo/4d4f2afb75de5407a3d45b0558b20a8a_0_1jg.html"
+    },
+    {
+        "area_preservacao_permanente": 2.90401273966862,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-618BEDCB66CB449CB8E3D3DA22B452C0",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 16.8156,
+            "modulos_fiscais": 0.9342,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°46'27,02\" S",
+            "endereco_longitude": "53°31'4,86\" O",
+            "registro_data": "28/10/2015",
+            "analise_data": null,
+            "retificacao_data": "18/01/2022"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 3.2548,
+            "area_legal_declarada": 3.2548
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 3.25479144872501,
+            "area_uso": 13.3986720634647,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209204223/w9KcYKPvwRr5ZhmURBX8ZbUODW4tcPz1/faa1b0544c133d96d65dab078b65a3ef_0_TPE.html"
+    },
+    {
+        "area_preservacao_permanente": 1.49996120125954,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-CDA67F4C7A534914A30165E27A14330F",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 18.0523,
+            "modulos_fiscais": 1.0029,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°57'25,44\" S",
+            "endereco_longitude": "53°19'46,37\" O",
+            "registro_data": "09/02/2015",
+            "analise_data": null,
+            "retificacao_data": "22/04/2022"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 4.795,
+            "area_legal_declarada": 4.795
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 0.201087841414101,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209204331/g9jcIsh8raf8uyjVJalyhu4mMDNzf5Vm/6725624f893478965adf3c73eb5a0f84_0_uIA.html"
+    },
+    {
+        "area_preservacao_permanente": 1.07944582833193,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-41033B0A7FE346DCB89EF983A0B55609",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 18.3744,
+            "modulos_fiscais": 1.0208,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°51'38,34\" S",
+            "endereco_longitude": "53°35'53,15\" O",
+            "registro_data": "20/04/2015",
+            "analise_data": null,
+            "retificacao_data": "20/04/2015"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 0,
+            "area_legal_declarada": 0
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 12.3966835299124,
+            "area_servidao_administrativa": 4.56106948158819
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209205555/au_WYzJswXuOlTV3lmG9PFW6BpddsgOJ/90fa8fe24d17bd463c0c0fd75826819e_0_yuQ.html"
+    },
+    {
+        "area_preservacao_permanente": 0,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-4FC32B2F58184874A8B2AC1186FCAF7C",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 2.1337,
+            "modulos_fiscais": 0.1185,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°51'43,06\" S",
+            "endereco_longitude": "53°34'59,8\" O",
+            "registro_data": "18/09/2015",
+            "analise_data": null,
+            "retificacao_data": "18/09/2015"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 0,
+            "area_legal_declarada": 0
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 2.13369997060671,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209205704/cy2CCPqpHZw3gAyDQMpMd09XUGcoZFVl/ff44921ceebbc46cc8953673c3e2ae37_0_Hcg.html"
+    },
+    {
+        "area_preservacao_permanente": 0.940686248764038,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-677D12E5F45F48FBBE5EC682319D1106",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 2.5898,
+            "modulos_fiscais": 0.1439,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "25°02'16,73\" S",
+            "endereco_longitude": "53°22'43,46\" O",
+            "registro_data": "23/09/2015",
+            "analise_data": null,
+            "retificacao_data": "23/09/2015"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 0.7973,
+            "area_legal_declarada": 0.7973
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0.797293827442743,
+            "area_uso": 1.68978743751802,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209205759/wciIa3Sko9PRFB6NJbl4jJzNNUo9Mx3b/d5cde25f73fe7befe8d7653fbb3d6818_0_xt8.html"
+    },
+    {
+        "area_preservacao_permanente": 0,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-AD0A7FFF1EAB4D389E671B36A3927676",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 33.5042,
+            "modulos_fiscais": 1.8613,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "25°05'6,19\" S",
+            "endereco_longitude": "53°22'48,22\" O",
+            "registro_data": "13/08/2021",
+            "analise_data": null,
+            "retificacao_data": "13/08/2021"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 11.7777,
+            "area_legal_declarada": 11.7777
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 14.3031057805806,
+            "area_uso": 0,
+            "area_servidao_administrativa": 0.0821914888469342
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209205848/EciKRa7A3-HwHQY7DauK5jN2n5a9LCmn/2e2efbef59ada306cb80d6504e20bdde_0_gRs.html"
+    },
+    {
+        "area_preservacao_permanente": 2.59317446218188,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-347E9F3D4B854455B0C92EEDC356AC64",
+        "condicao_cadastro": "Em análise",
+        "imovel": {
+            "area": 80.9714,
+            "modulos_fiscais": 4.4984,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "24°56'59,22\" S",
+            "endereco_longitude": "53°13'39,17\" O",
+            "registro_data": "05/11/2017",
+            "analise_data": null,
+            "retificacao_data": "24/11/2019"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 19.0051,
+            "area_legal_declarada": 19.0051
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 0,
+            "area_uso": 61.0903779659027,
+            "area_servidao_administrativa": 0
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209210306/7iKpMpkTj_NMdQGOQ9ntWYprWwtk7yID/fc5c1a4c87e04f62f26d8c8209a6ded8_0_rjs.html"
+    },
+    {
+        "area_preservacao_permanente": 1.1928771727928,
+        "area_uso_restrito": 0,
+        "car": "PR-4104808-C185C86C67F240F980CFE429D90AE13F",
+        "condicao_cadastro": "Aguardando análise",
+        "imovel": {
+            "area": 28.7683,
+            "modulos_fiscais": 1.5982,
+            "endereco_municipio": "Cascavel",
+            "endereco_uf": "PR",
+            "endereco_latitude": "25°16'15,48\" S",
+            "endereco_longitude": "53°20'25,98\" O",
+            "registro_data": "26/04/2015",
+            "analise_data": null,
+            "retificacao_data": "26/04/2015"
+        },
+        "reserva": {
+            "situacao": "Não Analisada",
+            "justificativa": null,
+            "area_averbada": 0,
+            "area_nao_averbada": 0,
+            "area_legal_proposta": 2.485,
+            "area_legal_declarada": 2.485
+        },
+        "restricoes": [],
+        "situacao": "Ativo",
+        "solo": {
+            "area_nativa": 2.49328767219819,
+            "area_uso": 25.3746414268325,
+            "area_servidao_administrativa": 0.788590707834065
+        },
+        "site_receipt": "https://storage.googleapis.com/infosimples-api-tmp-files/api/car/demonstrativo/20230209215901/R7N0YT0cwDLhCI3TW367shOzBnS9xHDR/9123b8892e076441a3cc3b784d670ce8_0_ZJo.html"
+    }
+]

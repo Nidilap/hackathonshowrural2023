@@ -1,109 +1,59 @@
-package com.sysagro.modelo.entidade;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.sysagro.modelo.dto.json;
 
 import com.sysagro.enumeracao.EstadoCivilEnum;
 import com.sysagro.enumeracao.TipoPessoaEnum;
-import static com.sysagro.util.TextoUtil.extrairSomenteNumeros;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.List;
-import static java.util.Objects.nonNull;
-import javax.persistence.*;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-import org.hibernate.envers.Audited;
 
 /**
+ *
  * @author Pedro
  */
-@Audited
-@Entity
-@Table(name = "pessoa")
-public class Pessoa extends AbstratoEntidade implements Serializable {
+public class PessoaJSON implements Serializable {
 
-    private static final long serialVersionUID = 48689303491294921L;
+    private static final long serialVersionUID = 98124899812489128L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
-    @SequenceGenerator(name = "seq_pessoa", sequenceName = "seq_pessoa", initialValue = 1, allocationSize = 1)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long id = 0L;
-    
-    @Version
-    @Column(name = "versao", nullable = false)
-    private Integer versao;
-    
-    @Column(name = "is_ativo", nullable = false)
-    private boolean isAtivo = true;
-    
-    @Column(name = "is_cliente", nullable = false)
+    // Variáveis
+    private Long idPessoa;
+    private boolean isAtivo;
     private boolean isProdutor;
-    
-    @Column(name = "is_fornecedor", nullable = false)
     private boolean isFornecedor;
-    
-    @Column(name = "is_funcionario", nullable = false)
     private boolean isFuncionario;
-    
-    @Column(name = "razao_social", nullable = false)
     private String razaoSocial;
-    
-    @Column(name = "nome_fantasia")
     private String nomeFantasia;
-    
-    @Column(name = "nome_pai")
     private String nomePai;
-    
-    @Column(name = "nome_mae")
     private String nomeMae;
-    
-    @Column(name = "cpf_cnpj", length = 20)
     private String cpfCnpj;
-    
-    @Column(name = "rg", length = 20)
     private String rg;
-    
-    @Column(name = "telefone", length = 20) // Telefone principal
     private String telefone;
-    
-    @Column(name = "celular", length = 20) // Celular principal
     private String celular;
-    
-    @Column(name = "email") // Email principal
     private String email;
-    
-    @Column(name = "atividade")
     private String atividade;
-
-    @Column(name = "observacao", columnDefinition = "TEXT")
     private String observacao;
-    
-    @Column(name = "data_hora_nascimento")
-	private ZonedDateTime dataHoraNascimento;
-    
-    @Column(name = "estado_civil", length = 10)
-    @Enumerated(EnumType.STRING)
+    private ZonedDateTime dataHoraNascimento;
     private EstadoCivilEnum estadoCivilEnum;
-    
-    @Column(name = "tipo_pessoa", length = 10)
-    @Enumerated(EnumType.STRING)
     private TipoPessoaEnum tipoPessoaEnum;
+    private AnexoJSON foto;
+    private List<EnderecoJSON> enderecos;
     
-    @JoinColumn(name = "id_foto", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_pessoa_foto"))
-	@ManyToOne(fetch = FetchType.LAZY)
-	private Anexo foto;
-    
-    @NotFound(action = NotFoundAction.IGNORE)
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<PessoaEndereco> vinculosEnderecos;
-
     // Construtor
-    public Pessoa() {
+    public PessoaJSON() {
     }
-
-    public Pessoa(boolean isAtivo, String razaoSocial, String nomeFantasia, String nomePai, String nomeMae, String cpfCnpj,
-            String rg, String telefone, String celular, String email, String atividade,
-            String observacao, ZonedDateTime dataHoraNascimento, EstadoCivilEnum estadoCivilEnum, TipoPessoaEnum tipoPessoaEnum, Anexo foto) {
+    
+    public PessoaJSON(Long idPessoa, boolean isAtivo, boolean isProdutor, boolean isFornecedor, boolean isFuncionario, String razaoSocial, String nomeFantasia,
+            String nomePai, String nomeMae, String cpfCnpj, String rg, String telefone, String celular, String email, String atividade, String observacao,
+            ZonedDateTime dataHoraNascimento, EstadoCivilEnum estadoCivilEnum, TipoPessoaEnum tipoPessoaEnum, AnexoJSON foto, List<EnderecoJSON> enderecos) {
+        this.idPessoa = idPessoa;
         this.isAtivo = isAtivo;
+        this.isProdutor = isProdutor;
+        this.isFornecedor = isFornecedor;
+        this.isFuncionario = isFuncionario;
         this.razaoSocial = razaoSocial;
         this.nomeFantasia = nomeFantasia;
         this.nomePai = nomePai;
@@ -119,48 +69,16 @@ public class Pessoa extends AbstratoEntidade implements Serializable {
         this.estadoCivilEnum = estadoCivilEnum;
         this.tipoPessoaEnum = tipoPessoaEnum;
         this.foto = foto;
+        this.enderecos = enderecos;
     }
     
-    // Listeners
-    @PrePersist
-    public void prePersistEntidade() {
-        validarCPFCNPJ();
-    }
-    
-    @PreUpdate
-    public void preUpdateEntidade() {
-        validarCPFCNPJ();
-    }
-
-    // Geral
-    private boolean isCPFValido() {
-        return nonNull(cpfCnpj)
-            && extrairSomenteNumeros(cpfCnpj).length() != 11;
-    }
-
-    private void validarCPFCNPJ() {
-        if (isCPFValido()) {
-            cpfCnpj = extrairSomenteNumeros(cpfCnpj);
-        } else {
-            cpfCnpj = null;
-        }
-    }
-
     // Getters && Setters
-    public Long getId() {
-        return id;
+    public Long getIdPessoa() {
+        return idPessoa;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getVersao() {
-        return versao;
-    }
-
-    private void setVersao(Integer versao) {
-        this.versao = versao;
+    public void setIdPessoa(Long idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public boolean isIsAtivo() {
@@ -307,45 +225,19 @@ public class Pessoa extends AbstratoEntidade implements Serializable {
         this.tipoPessoaEnum = tipoPessoaEnum;
     }
 
-    public Anexo getFoto() {
+    public AnexoJSON getFoto() {
         return foto;
     }
 
-    public void setFoto(Anexo foto) {
+    public void setFoto(AnexoJSON foto) {
         this.foto = foto;
     }
 
-    public List<PessoaEndereco> getVinculosEnderecos() {
-        return vinculosEnderecos;
+    public List<EnderecoJSON> getEnderecos() {
+        return enderecos;
     }
 
-    public void setVinculosEnderecos(List<PessoaEndereco> vinculosEnderecos) {
-        this.vinculosEnderecos = vinculosEnderecos;
-    }
-
-    // Equals && Hashcode
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + (int) (this.id ^ (this.id >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Pessoa other = (Pessoa) obj;
-        if (this.id != other.id) {
-            return false;
-        }
-        return true;
+    public void setEnderecos(List<EnderecoJSON> enderecos) {
+        this.enderecos = enderecos;
     }
 }

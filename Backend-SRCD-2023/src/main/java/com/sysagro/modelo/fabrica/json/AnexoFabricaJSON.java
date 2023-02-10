@@ -23,7 +23,7 @@ public class AnexoFabricaJSON implements Serializable {
                 anexo.retornarBase64(),
                 anexo.getDataHoraCriacao());
             return anexoJSON;
-        } catch (NullPointerException ex) {
+        } catch (Exception ex) {
             return null;
         }
     }

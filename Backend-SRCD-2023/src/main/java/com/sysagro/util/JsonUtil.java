@@ -7,13 +7,17 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import io.goodforgod.gson.configuration.deserializer.LocalDateDeserializer;
 import io.goodforgod.gson.configuration.deserializer.ZonedDateTimeDeserializer;
 import io.goodforgod.gson.configuration.serializer.LocalDateSerializer;
 import io.goodforgod.gson.configuration.serializer.ZonedDateTimeSerializer;
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import static java.util.Objects.isNull;
 
 /**
@@ -21,6 +25,8 @@ import static java.util.Objects.isNull;
  * @author Pedro
  */
 public final class JsonUtil {
+    
+    private static final Type typeArray = new TypeToken<ArrayList<JsonObject>>(){}.getType();
 
     // Construtor
     private JsonUtil() {}
@@ -42,6 +48,13 @@ public final class JsonUtil {
             return null;
         }
         return new Gson().fromJson(json, JsonObject.class);
+    }
+    
+    public static List<JsonObject> transformarEmArray(String json) {
+        if (isNull(json)) {
+            return null;
+        }
+        return new Gson().fromJson(json, typeArray);  
     }
 
     public static String retornarString(JsonObject jsonObject, String propriedade) {
