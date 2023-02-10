@@ -11,6 +11,7 @@ import Modal from "../views/modal/Modal";
 import Login from "./../views/login/Login";
 import PrivateRoute from "../components/auth/PrivateRoute";
 import LoteScreen from "../views/lote/loteScreen/LoteScreen";
+import MapVendasScreen from "../views/mapVendas/MapVendas";
 
 const Routes = () => {
     return (
@@ -21,6 +22,7 @@ const Routes = () => {
                     <Route path="/sobre" element={<Sobre />} />
                     <Route path="/modal" element={<Modal />} />
                     <Route path="/lote" element={<LoteScreen />} />
+                    <Route path="/mapaVendas" element={<MapVendasScreen />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Route>
                 <Route path="/login" element={<Login />} />

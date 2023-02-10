@@ -18,7 +18,6 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
     return (
-
         <div className="layoutWrapper">
             {!props.headerInvisivel && <Navbar title={props.headerTitle ? props.headerTitle : ''} drawer={props.drawer} voltar={props.botaoVoltar}/>}
             {props.children}

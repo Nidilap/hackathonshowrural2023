@@ -16,7 +16,7 @@ const Home = () => {
 
   
   return (
-    <Layout headerTitle='Home' drawer={true}>
+    <Layout headerTitle='Home'>
       <h1>Página Inicial</h1>
       <div className="iconesWrapper">
         {

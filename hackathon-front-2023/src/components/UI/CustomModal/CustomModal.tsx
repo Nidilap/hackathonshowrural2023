@@ -21,7 +21,7 @@ export default function CustomModal(props: ModalProps) {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <Box className={"modalBox"} style={props.estilo}>
+      <Box className={`modalBox`} style={props.estilo}>
         {props.children}
       </Box>
     </Modal>

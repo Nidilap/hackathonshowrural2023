@@ -1,0 +1,18 @@
+@import '../../../assets/constants/colors.scss';
+
+.marcador {
+    border-radius: 50%;
+    border: 8px solid $corPrimaria;
+    width: 8px;
+    height: 8px;
+  }
+  
+.marcador::after {
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 0px;
+    left: 0px;
+    border: 8px solid transparent;
+    border-top: 17px solid  $corPrimaria;
+  }
