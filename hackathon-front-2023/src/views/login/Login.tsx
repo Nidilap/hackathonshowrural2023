@@ -12,7 +12,7 @@ import Layout from "../../components/UI/Layout/Layout";
 import Button from "../../components/UI/Button/Button";
 
 // Images
-import logo from '../../assets/images/Logo_SysAgro_Branca_NoText.svg';
+import logo from '../../assets/images/LogoLogo.png';
 
 
 // Redux
@@ -56,8 +56,9 @@ const Login = () => {
     <Layout headerInvisivel={true} tabbarInvisivel={true}>
       <div className="container">
         <div className="logoLogin">
-          <img src={logo} width={50} height={50} alt="Logo" />
-          <div className="logoTitle">SysAgro</div>
+          {/* <img src={logo} width={50} height={50} alt="Logo" />
+          <div className="logoTitle">SysAgro</div> */}
+          <img src={logo} height={50} alt="Logo" />
         </div>
         <Card className="cardLogin">
 

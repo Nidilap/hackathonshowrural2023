@@ -12,7 +12,7 @@ import './Navbar.scss';
 import { Link } from 'react-router-dom';
 
 // Images
-import logo from '../../../../assets/images/Logo_SysAgro_Branca_NoText.svg';
+import logo from '../../../../assets/images/LogoIcon.png';
 
 // Estilos
 import { AppBar, useTheme } from "@mui/material";
@@ -45,6 +45,7 @@ export default function Navbar(props: NavBarProps) {
 		<>
 			<AppBar 
 				position="static"
+				className="appbarHeight"
 			>
 				<Toolbar className="toolbar">
 					{props.voltar && 
@@ -72,7 +73,7 @@ export default function Navbar(props: NavBarProps) {
 					}
 					{props.title && (
 						<Typography variant="h6" noWrap className="headerTitle">
-							<img src={logo} width={50} height={50} alt="Logo" style={{marginRight: 10}} />
+							<img src={logo} width={50} height={40} alt="Logo" style={{marginRight: 10}} />
 							{props.title}
 						</Typography>
 					)}

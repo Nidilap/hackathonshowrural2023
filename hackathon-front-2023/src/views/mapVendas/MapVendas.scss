@@ -74,6 +74,16 @@
 }
 
 .figuraInfoWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     background: linear-gradient(0deg, rgba(4,67,35,1) 0%, rgba(4,67,35,0.55) 55%, rgba(4,67,35,0) 100%);
+}
+
+.latLong {
+    color: white;
+    display: flex;
+    justify-content: flex-end;
 }

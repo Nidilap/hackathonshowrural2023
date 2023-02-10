@@ -15,13 +15,9 @@ import { toast } from "react-toastify";
 const AgendaCadastroScreen = () => {
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-
-    }, [])
-
 
     const selector = useAppSelector((state: any) => state.root.pessoa);
-    
+
     let optionsNome: any = [];
 
     const [nomePessoa, setNomePessoa] = useState<any>({value: "", label: ""});
