@@ -33,11 +33,11 @@ public class Visita extends AbstratoEntidade implements Serializable {
     private String observacao;
     
     @JoinColumn(name = "id_check_in", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_visita_check_in"))
-	@ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Localizacao checkIn;
     
     @JoinColumn(name = "id_check_out", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_visita_check_out"))
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Localizacao checkOut;
     
     @JoinColumn(name = "id_funcionario", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_visita_funcionario"))

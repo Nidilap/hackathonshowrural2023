@@ -44,7 +44,7 @@ public class UsuarioAPI {
     @Operation(summary = "Lista as visitas do usuário")
     public Response listarVisitas(@PathParam("id-usuario") Long idUsuario) {
         exibirInfo(getClass(), String.format("[GET] /usuarios/%d/visitas", idUsuario));
-        return visitaServicoAPI.listarComFiltros(idUsuario);
+        return visitaServicoAPI.listarComFiltros(idUsuario, null);
     }
     
     @GET

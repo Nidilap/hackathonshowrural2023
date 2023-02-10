@@ -1,6 +1,7 @@
 package com.sysagro.modelo.entidade;
 
 import java.io.Serializable;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 import javax.persistence.*;
 import org.hibernate.envers.Audited;
@@ -31,6 +32,11 @@ public class Localizacao extends AbstratoEntidade implements Serializable {
 
     // Construtor
     public Localizacao() {
+    }
+
+    public Localizacao(ZonedDateTime dataHoraCriacao, Coordinate coordenada) {
+        super.dataHoraCriacao = dataHoraCriacao;
+        this.coordenada = coordenada;
     }
     
     // Geral
