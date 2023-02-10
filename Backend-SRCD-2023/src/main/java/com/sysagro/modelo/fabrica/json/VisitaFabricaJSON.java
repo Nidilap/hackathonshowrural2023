@@ -25,6 +25,7 @@ public class VisitaFabricaJSON implements Serializable {
                 visita.getPessoa().getId(),
                 visita.getEndereco().getId(),
                 visita.getDataAgendada(),
+                visita.getPessoa().getRazaoSocial(),
                 visita.getObservacao(),
                 localizacaoFabricaJSON.criar(visita.getCheckIn()),
                 localizacaoFabricaJSON.criar(visita.getCheckOut()));
