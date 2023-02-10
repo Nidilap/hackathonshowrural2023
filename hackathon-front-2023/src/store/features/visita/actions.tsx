@@ -23,14 +23,14 @@ const fetchVisitasByUsuario = createAsyncThunk<any>('visita/fetchVisitasByUsuari
             const state: RootState = thunkApi.getState();
 
             const resData = await axiosGet(APISysAgroLinks.VisitaEndPoints.getListaVisitasByIdUsuario(state.root.auth.idUsuario));
-
-            let listaVisitas: Visita[] = [];
+            console.log("ENTROU AQUI")
+            let visitasDoUsuario: Visita[] = [];
             (resData.dados ?? []).map((item: any) => {
-                listaVisitas.push(ClassUtil.JSONConstructor(item, Visita))
+                visitasDoUsuario.push(ClassUtil.JSONConstructor(item, Visita))
             })
 
 
-            return thunkApi.fulfillWithValue({ visitasDoUsuario: listaVisitas })
+            return thunkApi.fulfillWithValue({ visitasDoUsuario: visitasDoUsuario })
         } catch (error: any) {
             return thunkApi.rejectWithValue(error.response.data);
         }

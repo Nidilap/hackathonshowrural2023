@@ -18,6 +18,8 @@ import { useAppDispatch, useAppSelector } from '../../store/configs/hooks';
 import Pessoa from '../../models/redux/pessoa';
 import CustomButton from '../../components/UI/Button/Button';
 
+import { Link } from 'react-router-dom';
+
 const MapVendasScreen = () => {
     const dispatch = useAppDispatch();
 
@@ -65,6 +67,7 @@ const MapVendasScreen = () => {
         setLongModal(item?.enderecos[0].localizacao.coordenada.y.toFixed(4).toString());
         // setLocalizacaoFigura(item?.enderecos[0].localizacao);
         // setEnderecoInfoFigura(item?.enderecos[0].endereco);
+        setTamanhoFigura(item?.enderecos[0].areaHa.toFixed(2).toString() + " ha")
         handleOpen();
     }
 
@@ -168,7 +171,7 @@ const MapVendasScreen = () => {
                 </Typography>
                 <div className="centralizarBotoes">
                     <CustomButton onClick={() => { }} className="botaoCentralizar">Mais informações sobre a fazenda</CustomButton>
-                    <CustomButton onClick={() => { }} className="botaoCentralizar">Adicionar à carteira de cliente</CustomButton>  
+                    <CustomButton component={Link} to="/clientecadastro" className="botaoCentralizar">Adicionar à carteira de cliente</CustomButton>  
                 </div>
             </CustomModal>
         </Layout>

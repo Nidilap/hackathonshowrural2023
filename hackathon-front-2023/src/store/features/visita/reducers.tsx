@@ -25,9 +25,9 @@ const estadoInicial: VisitaState = {
 export const visitaReducer = createReducer(estadoInicial, builder => {
 	builder
 		.addCase(fetchVisitasByUsuario.fulfilled, (state: any, action: any) => {
-			if(action?.payload?.visitasDoUsuario) {
-				state.visitasDoUsuario = action.payload.visitasDoUsuario;
-			}
+			state.visitasDoUsuario = [];
+			state.visitasDoUsuario = action.payload.visitasDoUsuario;
+			
 		})
 });
 

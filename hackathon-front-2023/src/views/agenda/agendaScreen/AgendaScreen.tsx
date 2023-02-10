@@ -1,12 +1,17 @@
 import { ReactNode, useEffect, useState } from 'react';
 import Layout from '../../../components/UI/Layout/Layout';
-import { ArrowForwardIos, ArrowBackIosNew, Add} from '@mui/icons-material';
+import { ArrowForwardIos, ArrowBackIosNew, Add } from '@mui/icons-material';
 import './AgendaScreen.scss';
 import HoraAgenda from '../../../components/UI/HoraAgenda/HoraAgenda';
 import CustomButton from '../../../components/UI/Button/Button';
 import { useAppDispatch, useAppSelector } from '../../../store/configs/hooks';
 import { fetchVisitasByUsuario } from '../../../store/features/visita';
 import Visita from '../../../models/redux/visita';
+
+import { Link } from 'react-router-dom';
+import { fetchPessoas } from '../../../store/features/pessoa';
+import Pessoa from '../../../models/redux/pessoa';
+import { AnyIfEmpty } from 'react-redux';
 
 // Component
 const AgendaScreen = () => {
@@ -15,11 +20,18 @@ const AgendaScreen = () => {
     const dispatch = useAppDispatch();
     const selector = useAppSelector((state: any) => state.root.visita);
 
+    const tratarDados = async () => {
+        iniciarDias();
+    }
+
+    useEffect(() => {
+         dispatch(fetchVisitasByUsuario());
+    }, [])
     // Constructor
     useEffect(() => {
-        dispatch(fetchVisitasByUsuario());
-        iniciarDias();
-    }, [])
+        tratarDados()
+    }, [JSON.stringify(selector)])
+
 
     // General
     const iniciarDias = (): void => {
@@ -41,7 +53,7 @@ const AgendaScreen = () => {
     }
 
     const renderVisitaAgenda = (hora: number): ReactNode => {
-        let visita = selector.visitasDoUsuario.filter((visita: Visita) => {
+        let visita: any = selector.visitasDoUsuario.filter((visita: Visita) => {
             visita.dataAgendada = (visita.dataAgendada ? new Date(visita.dataAgendada) : null);
             return visita.dataAgendada
                 && visita.dataAgendada.getDate() === 10
@@ -49,9 +61,10 @@ const AgendaScreen = () => {
                 && visita.dataAgendada.getFullYear() === 2023
                 && visita.dataAgendada.getHours() >= hora
                 && visita.dataAgendada.getHours() < (hora + 1)
-            })[0];
+        })[0];
         if (visita) {
-            return <div>{visita.nomePessoa}</div>;
+            return <Link to="/mapaVendas" className='objetoVisita'>{visita.nomePessoa}</Link>;
+            
         } else {
             return null;
         }
@@ -62,7 +75,7 @@ const AgendaScreen = () => {
         <Layout headerTitle='AGENDA'>
             <div className="agendaCardDia">
                 <div className="agendaSetaWrapper">
-                    <ArrowBackIosNew sx={{ color: "rgba(255, 255, 255, 1)" }}/>
+                    <ArrowBackIosNew sx={{ color: "rgba(255, 255, 255, 1)" }} />
                     <div className='diaAgenda'>SEXTA-FEIRA - 10 FEV 2023</div>
                     <ArrowForwardIos sx={{ color: "rgba(255, 255, 255, 1)" }} />
                 </div>
@@ -70,7 +83,7 @@ const AgendaScreen = () => {
                     {diasAgenda}
                 </div>
             </div>
-            <CustomButton className="botaoAgendamento" onClick={() => {}}>AGENDAMENTO <Add sx={{ color: "rgba(255, 255, 255, 1)" }} fontSize={"large"} /></CustomButton>
+            <CustomButton className="botaoAgendamento" component={Link} to="/agendacadastro">AGENDAMENTO <Add sx={{ color: "rgba(255, 255, 255, 1)" }} fontSize={"large"} /></CustomButton>
         </Layout>
     );
 }

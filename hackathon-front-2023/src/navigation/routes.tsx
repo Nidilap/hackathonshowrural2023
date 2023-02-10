@@ -14,6 +14,7 @@ import LoteScreen from "../views/lote/loteScreen/LoteScreen";
 import MapVendasScreen from "../views/mapVendas/MapVendas";
 import AgendaScreen from "../views/agenda/agendaScreen/AgendaScreen";
 import AgendaCadastroScreen from "../views/agenda/agendaCadastroScreen/AgendaCadastroScreen";
+import ClienteCadastro from "../views/clienteCadastro/ClienteCadastro";
 
 const Routes = () => {
     return (
@@ -27,6 +28,7 @@ const Routes = () => {
                     <Route path="/mapaVendas" element={<MapVendasScreen />} />
                     <Route path="/agenda" element={<AgendaScreen />} />
                     <Route path="/agendacadastro" element={<AgendaCadastroScreen />} />
+                    <Route path="/clientecadastro" element={<ClienteCadastro />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Route>
                 <Route path="/login" element={<Login />} />

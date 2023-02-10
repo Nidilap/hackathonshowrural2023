@@ -33,6 +33,9 @@ class Endereco extends BaseModel {
   @Prop("object", Localizacao)
   localizacao!: Localizacao;
 
+  @Prop("number")
+  areaHa!: number;
+
 }
 
 export default Endereco;
