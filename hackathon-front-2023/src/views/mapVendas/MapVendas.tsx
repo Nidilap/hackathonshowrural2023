@@ -172,6 +172,7 @@ const MapVendasScreen = () => {
                 <div className="centralizarBotoes">
                     <CustomButton onClick={() => { }} className="botaoCentralizar">Mais informações sobre a fazenda</CustomButton>
                     <CustomButton component={Link} to="/clientecadastro" className="botaoCentralizar">Adicionar à carteira de cliente</CustomButton>  
+                    <CustomButton component={Link} to="/comunicarassistencia" className="botaoCentralizar">Abrir Chamado de Assistência</CustomButton>  
                 </div>
             </CustomModal>
         </Layout>

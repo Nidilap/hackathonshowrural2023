@@ -16,8 +16,8 @@ const getItensMenuGeral = () => {
         new MenuItem(3, "Calendário", <CalendarMonth />, "/agenda"),
         new MenuItem(4, "Agendar", <Schedule />, "/agendacadastro"),
         new MenuItem(5, "Cliente", <Groups />, "/clientecadastro"),
-        new MenuItem(6, "Assistência", <Handshake />, "/assistencia"),
-        new MenuItem(7, "Chamado", <PermPhoneMsg />, "/chamado"),
+        new MenuItem(6, "Assistência", <Handshake />, "/comunicarassistencia"),
+        new MenuItem(7, "Chamado", <PermPhoneMsg />, "/comunicarassistencia"),
     ]
 }
 
