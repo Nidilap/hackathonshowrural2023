@@ -28,23 +28,23 @@ public abstract class AbstratoEntidade {
     // Colunas
     @Audited
     @Column(name = "data_hora_criacao", updatable = false)
-    private ZonedDateTime dataHoraCriacao;
+    protected ZonedDateTime dataHoraCriacao;
 
     @Audited
     @Column(name = "data_hora_atualizacao")
-    private ZonedDateTime dataHoraAtualizacao;
+    protected ZonedDateTime dataHoraAtualizacao;
 
     @Audited
     @Column(name = "usuario_criacao", updatable = false) // Id usuário criação
-    private Long usuarioCriacao;
+    protected Long usuarioCriacao;
 
     @Audited
     @Column(name = "usuario_atualizacao") // Id usuário atualização
-    private Long usuarioAtualizacao;
+    protected Long usuarioAtualizacao;
 
     // Transients
     @Transient
-    private TipoOperacaoBDEnum tipoOperacaoBDTR = TipoOperacaoBDEnum.INS;
+    protected TipoOperacaoBDEnum tipoOperacaoBDTR = TipoOperacaoBDEnum.INS;
 
     // Listeners
     @PrePersist

@@ -5,7 +5,9 @@ import com.sysagro.modelo.servico.api.VisitaServicoAPI;
 import static com.sysagro.util.LogUtil.exibirInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -17,10 +19,10 @@ import javax.ws.rs.core.Response;
  */
 @Path("/visitas")
 public class VisitaAPI {
-    
+
     @Inject
     private VisitaServicoAPI visitaServicoAPI;
-    
+
     // GET
     @GET
     @Autorizar
@@ -29,5 +31,16 @@ public class VisitaAPI {
     public Response listar() {
         exibirInfo(getClass(), "[GET] /visitas");
         return visitaServicoAPI.listar();
+    }
+
+    // POST
+    @POST
+    @Autorizar
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Cadastra uma visita")
+    public Response criar(String json) {
+        exibirInfo(getClass(), "[POST] /visitas");
+        return visitaServicoAPI.criar(json);
     }
 }

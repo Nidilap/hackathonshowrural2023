@@ -4,7 +4,6 @@ package com.sysagro.modelo.dao;
 
 import com.sysagro.modelo.entidade.Visita;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.inject.Named;
@@ -33,7 +32,7 @@ public class VisitaDAO extends AbstratoDAO<Visita> implements Serializable {
         return em.createQuery(sql.toString()).getResultList();
     }
     
-    public List<Visita> listarComFiltrosAPI(Long idFuncionario) {
+    public List<Visita> listarComFiltrosAPI(Long idFuncionario, Long idPessoa) {
         StringBuilder sql = new StringBuilder("")
             .append("SELECT vis \n")
             .append("  FROM Visita vis \n")
@@ -46,11 +45,17 @@ public class VisitaDAO extends AbstratoDAO<Visita> implements Serializable {
         if (Objects.nonNull(idFuncionario)) {
             sql.append("   AND func.id = (:idFuncionario) \n");
         }
+        if (Objects.nonNull(idFuncionario)) {
+            sql.append("   AND pess.id = (:idPessoa) \n");
+        }
         sql.append(" ORDER BY pess.razaoSocial, vis.dataHoraCriacao \n");
         // Query
         Query query =  em.createQuery(sql.toString());
         if (Objects.nonNull(idFuncionario)) {
             query.setParameter("idFuncionario", idFuncionario);
+        }
+        if (Objects.nonNull(idFuncionario)) {
+            query.setParameter("idPessoa", idPessoa);
         }
         return query.getResultList();
     }
