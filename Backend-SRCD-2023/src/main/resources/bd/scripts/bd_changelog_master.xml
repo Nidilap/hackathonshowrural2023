@@ -7,5 +7,6 @@
 	<include file="bd/scripts/bd_changelog_pedro_20230205_1.xml" />
 	<include file="bd/scripts/bd_changelog_pedro_20230205_2.xml" />
 	<include file="bd/scripts/bd_changelog_pedro_20230205_3.xml" />
+	<include file="bd/scripts/bd_changelog_pedro_20230209.xml" />
 	<include file="bd/scripts/bd_changelog_pedro_homologacao.xml" />
 </databaseChangeLog>

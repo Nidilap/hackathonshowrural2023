@@ -26,11 +26,24 @@ public class Localizacao extends AbstratoEntidade implements Serializable {
     @Column(name = "versao", nullable = false)
     private Integer versao;
 
-    @Column(name = "coordenada") // Latitude, Longitude e Altitude
+    @Column(name = "coordenada") // Latitude (X), Longitude (Y) e Altitude (Z)
     private Coordinate coordenada;
 
     // Construtor
     public Localizacao() {
+    }
+    
+    // Geral
+    public double retornarLatitude() {
+        return Objects.isNull(coordenada) ? 0d : coordenada.getX();
+    }
+
+    public double retornarLongitude() {
+        return Objects.isNull(coordenada) ? 0d : coordenada.getY();
+    }
+
+    public double retornarAltitude() {
+        return Objects.isNull(coordenada) ? 0d : coordenada.getZ();
     }
 
     // Getters && Setters

@@ -19,6 +19,24 @@ public class CidadeDAO extends AbstratoDAO<Cidade> implements Serializable {
     private static final long serialVersionUID = 938257819857128512L;
 
     // Geral
+    public Cidade buscarPorFiltros(String nomeCidade, String uf) {
+        StringBuilder sql = new StringBuilder("")
+            .append("SELECT cid \n")
+            .append("  FROM Cidade cid \n")
+            .append("    INNER JOIN FETCH cid.estado estado \n")
+            .append("    INNER JOIN FETCH estado.pais pais \n")
+            .append(" WHERE TRIM(cid.nome) ILIKE (:nomeCidade) \n")
+            .append("   AND estado.uf = (:uf) \n");
+        try {
+            return (Cidade) em.createQuery(sql.toString())
+                .setParameter("nomeCidade", "'".concat(nomeCidade.trim()).concat("'"))
+                .setParameter("uf", uf)
+                .getSingleResult();
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+    
     public List<Cidade> listarTodos() {
         StringBuilder sql = new StringBuilder("")
             .append("SELECT cid \n")

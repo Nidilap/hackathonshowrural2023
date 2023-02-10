@@ -50,9 +50,16 @@ public class Endereco extends AbstratoEntidade implements Serializable {
     
     @Column(name = "inscricao_municipal", length = 20)
     private String inscricaoMunicipal;
+    
+    @Column(name = "car") // Cadastro Ambiental Rural
+    private String car;
 
     @Column(name = "observacao", columnDefinition = "TEXT")
     private String observacao;
+
+    @JoinColumn(name = "id_localizacao", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_endereco_localizacao"))
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Localizacao localizacao;
 
     @JoinColumn(name = "id_cidade", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_endereco_cidade"))
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -62,8 +69,8 @@ public class Endereco extends AbstratoEntidade implements Serializable {
     public Endereco() {
     }
 
-    public Endereco(boolean isAtivo, boolean isPrincipal, Integer numero, String endereco, String bairro, String complemento,
-            String cep, String inscricaoEstadual, String inscricaoMunicipal, String observacao, Cidade cidade) {
+    public Endereco(boolean isAtivo, boolean isPrincipal, Double latitude, Double longitude, Double altitude, Integer numero, String endereco, String bairro, String complemento,
+            String cep, String inscricaoEstadual, String inscricaoMunicipal, String car, String observacao, Cidade cidade) {
         this.isAtivo = isAtivo;
         this.isPrincipal = isPrincipal;
         this.numero = numero;
@@ -73,6 +80,7 @@ public class Endereco extends AbstratoEntidade implements Serializable {
         this.cep = cep;
         this.inscricaoEstadual = inscricaoEstadual;
         this.inscricaoMunicipal = inscricaoMunicipal;
+        this.car = car;
         this.observacao = observacao;
         this.cidade = cidade;
     }
@@ -166,12 +174,28 @@ public class Endereco extends AbstratoEntidade implements Serializable {
         this.inscricaoMunicipal = inscricaoMunicipal;
     }
 
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
+
     public String getObservacao() {
         return observacao;
     }
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public Localizacao getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(Localizacao localizacao) {
+        this.localizacao = localizacao;
     }
 
     public Cidade getCidade() {

@@ -20,6 +20,7 @@ public final class ConfiguracaoUtil {
     // Caminhos
     public static final String CAMINHO_ASSINATURA_JWT = "chaves/assinaturaJWT.txt"; // a partir de "resources"
     public static final String CAMINHO_LOGO_SISTEMA_COM_TEXTO = "imagem/logo/branca/logoComTexto.png"; // a partir de "resources"
+    public static final String CAMINHO_CADASTRO_AMBIENTAL_RURAL = "base/dados/cadastro_ambiental_rural.json";
     
     // Cabecalho HTTP
     public static final String CABECALHO_HTTP_ID_USUARIO = "IdUsuario";

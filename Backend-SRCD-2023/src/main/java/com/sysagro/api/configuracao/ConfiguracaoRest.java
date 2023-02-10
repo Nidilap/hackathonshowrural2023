@@ -24,8 +24,11 @@ public class ConfiguracaoRest extends Application {
 
     private void adicionarClassesRest(Set<Class<?>> recursos) {
         recursos.add(com.sysagro.anotacao.implementacao.AutorizarFiltro.class);
+        recursos.add(com.sysagro.api.PessoaAPI.class);
+        recursos.add(com.sysagro.api.SolicitacaoPessoaAPI.class);
         recursos.add(com.sysagro.api.StatusAPI.class);
         recursos.add(com.sysagro.api.UsuarioAPI.class);
+        recursos.add(com.sysagro.api.VisitaAPI.class);
     }
 
     private void adicionarClassesSwagger(Set<Class<?>> recursos) {

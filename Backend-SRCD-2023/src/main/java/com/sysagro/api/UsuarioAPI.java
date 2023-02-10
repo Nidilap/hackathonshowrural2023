@@ -2,6 +2,7 @@ package com.sysagro.api;
 
 import com.sysagro.anotacao.Autorizar;
 import com.sysagro.modelo.servico.api.UsuarioServicoAPI;
+import com.sysagro.modelo.servico.api.VisitaServicoAPI;
 import io.swagger.v3.oas.annotations.Operation;
 import static com.sysagro.util.LogUtil.exibirInfo;
 import javax.inject.Inject;
@@ -22,6 +23,8 @@ import javax.ws.rs.core.Response;
 public class UsuarioAPI {
 
     @Inject
+    private VisitaServicoAPI visitaServicoAPI;
+    @Inject
     private UsuarioServicoAPI usuarioServicoAPI;
     
     // GET
@@ -32,6 +35,16 @@ public class UsuarioAPI {
     public Response listar() {
         exibirInfo(getClass(), "[GET] /usuarios");
         return usuarioServicoAPI.listar();
+    }
+    
+    @GET
+    @Autorizar
+    @Path("/{id-usuario}/visitas")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Lista as visitas do usuário")
+    public Response listarVisitas(@PathParam("id-usuario") Long idUsuario) {
+        exibirInfo(getClass(), String.format("[GET] /usuarios/%d/visitas", idUsuario));
+        return visitaServicoAPI.listarComFiltros(idUsuario);
     }
     
     @GET

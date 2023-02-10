@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
 import static java.util.Objects.isNull;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 
 /**
  *
@@ -47,5 +49,10 @@ public final class NumeroUtil {
     
     public static Integer validarInteger(Integer valor) {
         return isNull(valor) ? 0 : valor;
+    }
+    
+    public static ScriptEngine retornarEngineCalculo() {
+        ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
+        return scriptEngineManager.getEngineByName("JavaScript");
     }
 }
