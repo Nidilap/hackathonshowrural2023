@@ -14,10 +14,12 @@ import 'react-toastify/dist/ReactToastify.css';
 //MATERIAL UI 
 import theme from './assets/styles/materialuitheme';
 import { ThemeProvider } from '@mui/material';
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 
 // PWA Configs
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { LocalizationProvider } from '@mui/x-date-pickers';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -26,12 +28,14 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <App />
-          <ToastContainer />
-        </PersistGate>
-      </Provider>
+      <LocalizationProvider dateAdapter={AdapterMoment}>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <App />
+            <ToastContainer />
+          </PersistGate>
+        </Provider>
+      </LocalizationProvider>
     </ThemeProvider>
 );
 
