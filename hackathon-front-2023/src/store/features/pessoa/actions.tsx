@@ -62,7 +62,7 @@ const cadastrarVisita = createAsyncThunk('pessoa/cadastrarVisita',
             toast.success("Agendamento feito com sucesso!", {
                 position: "top-center",
               });
-            thunkApi.dispatch(push("/"));
+            thunkApi.dispatch(push("/agenda"));
         } catch (error: any) {
             return thunkApi.rejectWithValue(error.response.data);
         }
