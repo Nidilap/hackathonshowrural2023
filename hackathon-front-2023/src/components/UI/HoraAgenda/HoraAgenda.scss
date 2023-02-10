@@ -1,0 +1,25 @@
+@import '../../../assets/constants/colors.scss';
+
+.linha {
+    width: 100%;
+    height: 1px;
+    background-color: $corTextoEscuro;
+}
+
+.horaLinhaWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.hora {
+    padding-right: 10px;
+}
+
+.horaAgendaWrapper {
+    min-height: 40px;
+    max-height: 40px;
+}
+
+.wrapperChildren {
+    margin-left: 40px;
+}
