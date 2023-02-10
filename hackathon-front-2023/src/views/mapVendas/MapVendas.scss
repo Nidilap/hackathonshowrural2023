@@ -30,7 +30,7 @@
 
 .informacoesAbaixoWrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px;
 }
 
@@ -52,12 +52,12 @@
 }
 
 .subtituloModal {
-    font-size: 0.75em !important;
+    font-size: 0.9em !important;
     font-weight: 700 !important;
 }
 
 .infosAdicionaisModal {
-    font-size: 0.75em !important;
+    font-size: 0.9em !important;
 }
 
 .botao {
@@ -86,4 +86,25 @@
     color: white;
     display: flex;
     justify-content: flex-end;
+}
+
+.centralizar {
+    text-align: center;
+}
+
+.botaoCentralizar {
+    text-align: center;
+    margin: 10px 10px;
+} 
+
+.modal2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.centralizarBotoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -16,6 +16,7 @@ import { Button, Typography } from '@mui/material';
 import { fetchPessoas } from '../../store/features/pessoa';
 import { useAppDispatch, useAppSelector } from '../../store/configs/hooks';
 import Pessoa from '../../models/redux/pessoa';
+import CustomButton from '../../components/UI/Button/Button';
 
 const MapVendasScreen = () => {
     const dispatch = useAppDispatch();
@@ -31,6 +32,11 @@ const MapVendasScreen = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+
+    const [open2, setOpen2] = useState(false);
+    const handleOpen2 = () => setOpen2(true);
+    const handleClose2 = () => setOpen2(false);
 
     const [marcadoresRender, setMarcadoresRender] = useState([]);
 
@@ -80,11 +86,14 @@ const MapVendasScreen = () => {
             if (item?.enderecos?.length > 0) {
                 let nomeParaMostrar = "PROSPECÇÃO";
                 let cor = "#F12121";
-                if(item?.razaoSocial !== "PESSOA DESCONHECIDA") {
+                if (item?.razaoSocial !== "PESSOA DESCONHECIDA") {
                     cor = "#5158FA";
                     nomeParaMostrar = item.razaoSocial;
+                } else if (item.idPessoa == 22 || item.idPessoa == 29 || item.idPessoa == 27 ) {
+                    cor = "#EA630B";
+                    nomeParaMostrar = "PROSPECTANDO";
                 }
-                
+
 
                 dadosRetorno.push(
                     <Marker
@@ -125,23 +134,41 @@ const MapVendasScreen = () => {
                                 <Typography className="tituloInfoFigura">Fazenda de {tituloInfoFigura}</Typography>
                                 {/* <Typography className="enderecoInfoFigura">Endereço: {enderecoInfoFigura}</Typography> */}
                             </div>
-                            <Button className="botao" onClick={() => { }}><Add sx={{ color: "rgba(255, 255, 255, 1)" }} fontSize={"large"} /></Button>
+                            <Button className="botao" onClick={handleOpen2}><Add sx={{ color: "rgba(255, 255, 255, 1)" }} fontSize={"large"} /></Button>
                         </div>
                     </div>
                 </div>
                 <div className="informacoesAbaixoWrapper">
                     <div className="informacoesAbaixo">
                         <Typography className="subtituloModal"><Room />&nbsp;Localização</Typography>
-                        <Typography className="infosAdicionaisModal">{localizacaoFigura}</Typography>
+                        <Typography className="infosAdicionaisModal">Cascavel</Typography>
                     </div>
                     <div className="informacoesAbaixo">
                         <Typography className="subtituloModal"><Agriculture />&nbsp;&nbsp;Agricultável</Typography>
-                        <Typography className="infosAdicionaisModal infoAdicionalAgricultavel">SIM</Typography>
+                        <Typography className="infosAdicionaisModal">12ha</Typography>
+                    </div>
+                </div>
+                <div className="informacoesAbaixoWrapper">
+                    <div className="informacoesAbaixo">
+                        <Typography className="subtituloModal"><CropFree />&nbsp;Reserva</Typography>
+                        <Typography className="infosAdicionaisModal">3ha</Typography>
                     </div>
                     <div className="informacoesAbaixo">
                         <Typography className="subtituloModal"><CropFree />&nbsp;Tamanho</Typography>
                         <Typography className="infosAdicionaisModal">{tamanhoFigura}</Typography>
                     </div>
+                </div>
+
+            </CustomModal>
+
+
+            <CustomModal aberto={open2} handleClose={handleClose2} className="modal2">
+                <Typography id="modal-modal-title" variant="h6" component="h2" className="centralizar">
+                    Selecione a ação abaixo
+                </Typography>
+                <div className="centralizarBotoes">
+                    <CustomButton onClick={() => { }} className="botaoCentralizar">Mais informações sobre a fazenda</CustomButton>
+                    <CustomButton onClick={() => { }} className="botaoCentralizar">Adicionar à carteira de cliente</CustomButton>  
                 </div>
             </CustomModal>
         </Layout>
