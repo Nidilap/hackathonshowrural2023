@@ -33,17 +33,20 @@ const MapVendasScreen = () => {
     handleOpen();
   }
 
+
+  
   return (
-    <Layout botaoVoltar={true} headerTitle="Mapa de Venda">
+    <Layout headerTitle="Mapa de Venda">
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyBgkk9MPQJavPiBUqwhQ8LpF0p9dmTO2qo" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
+        options={(map: any) => ({ mapTypeId: map.MapTypeId.SATELLITE })}
         style={{ width: '100%', height: '100%', position: 'relative', flex: 1 }}
       >
         <Marker
-          lat={-24.996343}
-          lng={-53.515441}
+          lat={-24.987458333333333}
+          lng={-53.36433888888889}
           onClick={abrirModal.bind(this)}
         />
       </GoogleMapReact>

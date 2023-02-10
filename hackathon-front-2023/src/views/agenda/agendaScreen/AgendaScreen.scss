@@ -1,0 +1,36 @@
+@import "../../../assets/constants/colors.scss";
+
+.agendaCardDia {
+    background-color: #02C764;
+    width: 90%;
+    margin: 20px 0;
+    border-radius: 20px;
+    max-height: 100%;
+}
+
+.agendaSetaWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+}
+
+.diaAgenda {
+    color: $corTextoClaro;
+    background-color: $corPrimaria;
+    border-radius: 13px;
+    padding: 3px 7px;
+}
+
+.horasAgendas {
+    background-color: $backgroundWhite;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.botaoAgendamento {
+    right: 10px;
+    position: fixed !important;
+    bottom: 90px;
+    border-radius: 20px !important;
+}
