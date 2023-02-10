@@ -1,0 +1,113 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:form id="listagemParametrosForm" prependId="false">
+        <p:panel styleClass="box-primary card">
+            <c:forEach
+                var="tipoParametroEnumVar"
+                items="#{parametroControlador.tiposParametrosEnum}">
+                <p:dataTable
+                    id="parametroDT"
+                    var="parametroDTVar"
+                    size="small"
+                    reflow="true"
+                    rowKey="#{parametroDTVar.hashCode()}"
+                    rowIndexVar="index"
+                    value="#{parametroControlador.filtrarPorTipoParametroEnum(tipoParametroEnumVar)}">
+                    <f:facet name="header">
+                        <h:outputText
+                            styleClass="font-bold cor-branca"
+                            value="#{labels[tipoParametroEnumVar.nomeI18N]}" />
+                    </f:facet>
+                    <p:column
+                        headerText="#"
+                        width="10%"
+                        sortBy="#{index + 1}"
+                        filterBy="#{index + 1}">
+                        <h:outputText value="#{index + 1}" />
+                    </p:column>
+                    <p:column
+                        headerText="#{labels['parametro.si']}"
+                        width="20%"
+                        sortBy="#{labels[parametroDTVar.parametroEnum.nomeI18N]}"
+                        filterBy="#{labels[parametroDTVar.parametroEnum.nomeI18N]}">
+                        <h:outputText
+                            styleClass="uppercase"
+                            value="#{labels[parametroDTVar.parametroEnum.nomeI18N]}" />
+                    </p:column>
+                    <p:column
+                        headerText="#{labels['geral.descricao.si']}"
+                        width="25%"
+                        sortBy="#{labels[parametroDTVar.parametroEnum.descricaoI18N]}"
+                        filterBy="#{labels[parametroDTVar.parametroEnum.descricaoI18N]}">
+                        <h:outputText
+                            styleClass="uppercase"
+                            value="#{labels[parametroDTVar.parametroEnum.descricaoI18N]}" />
+                    </p:column>
+                    <p:column
+                        headerText="#{labels['geral.valor']}"
+                        width="15%"
+                        sortBy="#{parametroDTVar.valor}"
+                        filterBy="#{parametroDTVar.valor}">
+                        <p:outputPanel rendered="#{parametroDTVar.parametroEnum.tipoDadoEnum eq TipoDadoEnum.BOOLEANO}" styleClass="text-center">
+                            <p:selectBooleanCheckbox value="#{parametroDTVar.valor}"/>
+                        </p:outputPanel>
+                        <p:outputPanel rendered="#{parametroDTVar.parametroEnum.tipoDadoEnum eq TipoDadoEnum.INTEIRO}">
+                            <p:inputNumber
+                                decimalPlaces="0"
+                                inputStyleClass="w-full"
+                                value="#{parametroDTVar.valor}"/>
+                        </p:outputPanel>
+                        <p:outputPanel rendered="#{parametroDTVar.parametroEnum.tipoDadoEnum eq TipoDadoEnum.DECIMAL}">
+                            <p:inputNumber
+                                decimalPlaces="#{parametroDTVar.parametroEnum.casaDecimalTipoDado}"
+                                inputStyleClass="w-full"
+                                value="#{parametroDTVar.valor}"/>
+                        </p:outputPanel>
+                        <p:outputPanel rendered="#{parametroDTVar.parametroEnum.tipoDadoEnum eq TipoDadoEnum.TEXTO}">
+                            <p:inputText
+                                styleClass="w-full"
+                                value="#{parametroDTVar.valor}"/>
+                        </p:outputPanel>
+                        <p:outputPanel rendered="#{parametroDTVar.parametroEnum.tipoDadoEnum eq TipoDadoEnum.LISTA}">
+                            <p:commandButton
+                                title="#{labels['acao.editar']}"
+                                icon="fa fa-pen"
+                                styleClass="btn-primary circulo-botao mr-2"
+                                update="editarRegistrosParametroForm"
+                                actionListener="#{parametroControlador.editarRegistros(parametroDTVar)}" />
+                            <h:outputText value="#{parametroDTVar.valor}" />
+                        </p:outputPanel>
+                    </p:column>
+                    <p:column
+                        headerText="#{labels['geral.observacao.si']}"
+                        width="30%"
+                        sortBy="#{parametroDTVar.observacao}"
+                        filterBy="#{parametroDTVar.observacao}">
+                        <p:inputTextarea
+                            rows="1"
+                            autoResize="true"
+                            styleClass="w-full"
+                            value="#{parametroDTVar.observacao}" />
+                    </p:column>
+                </p:dataTable>
+                <br/>
+            </c:forEach>
+        </p:panel>
+        <br />
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-2 ui-xl-2">
+                <p:commandButton
+                    value="#{labels['acao.salvar']}"
+                    icon="fa fa-save"
+                    styleClass="btn-primary w-full"
+                    update="@form"
+                    actionListener="#{parametroControlador.salvar()}" />
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

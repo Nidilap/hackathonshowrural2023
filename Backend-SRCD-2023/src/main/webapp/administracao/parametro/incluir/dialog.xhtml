@@ -1,0 +1,95 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <!-- Editar registros -->
+    <p:dialog
+        header="#{labels['parametro.si']}"
+        modal="true"
+        responsive="true"
+        resizable="false"
+        showEffect="fade"
+        hideEffect="fade"
+        styleClass="w-6"
+        widgetVar="editarRegistrosParametroDialogWV">
+        <h:form id="editarRegistrosParametroForm">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12">
+                    <p:commandButton
+                        title="#{labels['acao.adicionar']}"
+                        icon="fa fa-plus"
+                        styleClass="btn-primary circulo-botao mr-2"
+                        update="registroParametroDT"
+                        actionListener="#{parametroControlador.adicionarRegistroVazio()}" />
+                    <h:outputText
+                        styleClass="uppercase"
+                        value="#{labels[parametroControlador.parametro.parametroEnum.descricaoI18N]}" />
+                </div>
+                <p:dataTable
+                    id="registroParametroDT"
+                    var="registroParametroDTVar"
+                    size="small"
+                    reflow="true"
+                    rows="5"
+                    paginator="true"
+                    paginatorPosition="bottom"
+                    rowKey="#{registroParametroDTVar.hashCode()}"
+                    rowIndexVar="index"
+                    value="#{parametroControlador.parametro.registrosTR}">
+                    <p:column headerText="#" width="20%">
+                        <h:outputText value="#{index + 1}" />
+                    </p:column>
+                    <p:column headerText="#{labels['geral.valor']}" width="70%">
+                        <p:outputPanel rendered="#{registroParametroDTVar.parametroEnum.tipoDadoRegistroListaEnum eq TipoDadoEnum.BOOLEANO}" styleClass="text-center">
+                            <p:selectBooleanCheckbox value="#{registroParametroDTVar.valor}"/>
+                        </p:outputPanel>
+                        <p:outputPanel rendered="#{registroParametroDTVar.parametroEnum.tipoDadoRegistroListaEnum eq TipoDadoEnum.INTEIRO}">
+                            <p:inputNumber
+                                decimalPlaces="0"
+                                inputStyleClass="w-full"
+                                value="#{registroParametroDTVar.valor}"/>
+                        </p:outputPanel>
+                        <p:outputPanel rendered="#{registroParametroDTVar.parametroEnum.tipoDadoRegistroListaEnum eq TipoDadoEnum.DECIMAL}">
+                            <p:inputNumber
+                                decimalPlaces="#{registroParametroDTVar.parametroEnum.casaDecimalTipoDadoRegistroLista}"
+                                inputStyleClass="w-full"
+                                value="#{registroParametroDTVar.valor}"/>
+                        </p:outputPanel>
+                        <p:outputPanel rendered="#{registroParametroDTVar.parametroEnum.tipoDadoRegistroListaEnum eq TipoDadoEnum.TEXTO}">
+                            <p:inputText
+                                styleClass="w-full"
+                                value="#{registroParametroDTVar.valor}"/>
+                        </p:outputPanel>
+                    </p:column>
+                    <p:column headerText="#{labels['acao.pl']}" width="10%" styleClass="text-center">
+                        <p:commandButton
+                            title="#{labels['acao.excluir']}"
+                            icon="fa fa-trash"
+                            styleClass="btn-danger circulo-botao"
+                            update="registroParametroDT"
+                            actionListener="#{parametroControlador.excluirRegistro(index)}" />
+                    </p:column>
+                </p:dataTable>
+                <div class="ui-g-6">
+                    <p:commandButton
+                        value="#{labels['acao.salvar']}"
+                        icon="fa fa-plus"
+                        styleClass="btn-primary w-full"
+                        update="@form listagemParametrosForm"
+                        actionListener="#{parametroControlador.salvarRegistros()}" />
+                </div>
+                <div class="ui-g-6">
+                    <p:commandButton
+                        value="#{labels['acao.fechar']}"
+                        type="button"
+                        icon="fa fa-times"
+                        styleClass="btn-danger w-full"
+                        onclick="PF('editarRegistrosParametroDialogWV').hide()" />
+                </div>
+            </div>
+        </h:form>
+    </p:dialog>
+</ui:composition>
