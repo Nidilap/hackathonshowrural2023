@@ -14,7 +14,7 @@ const Home = () => {
     const { itensMenu } = useGetMenuItens();
     const selector = useAppSelector((state) => state);
 
-    // General
+    // Other TSX
     const renderButtons = (): ReactNode => {
         return itensMenu.filter(item => item.title != "Início").map(item => {
             return (<HomeIcon key={`${item.idMenuItem}`} menuItem={item} />)

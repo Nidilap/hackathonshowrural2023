@@ -1,6 +1,7 @@
 package com.sysagro.modelo.entidade;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.*;
 import org.hibernate.envers.Audited;
 
@@ -56,6 +57,9 @@ public class Endereco extends AbstratoEntidade implements Serializable {
 
     @Column(name = "observacao", columnDefinition = "TEXT")
     private String observacao;
+    
+    @Column(name = "area_ha", precision = 15, scale = 5) // Área em Hectares (ha)
+    private BigDecimal areaHa;
 
     @JoinColumn(name = "id_localizacao", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_endereco_localizacao"))
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -70,7 +74,7 @@ public class Endereco extends AbstratoEntidade implements Serializable {
     }
 
     public Endereco(boolean isAtivo, boolean isPrincipal, Double latitude, Double longitude, Double altitude, Integer numero, String endereco, String bairro, String complemento,
-            String cep, String inscricaoEstadual, String inscricaoMunicipal, String car, String observacao, Cidade cidade) {
+            String cep, String inscricaoEstadual, String inscricaoMunicipal, String car, String observacao, BigDecimal areaHa, Cidade cidade) {
         this.isAtivo = isAtivo;
         this.isPrincipal = isPrincipal;
         this.numero = numero;
@@ -82,6 +86,7 @@ public class Endereco extends AbstratoEntidade implements Serializable {
         this.inscricaoMunicipal = inscricaoMunicipal;
         this.car = car;
         this.observacao = observacao;
+        this.areaHa = areaHa;
         this.cidade = cidade;
     }
 
@@ -188,6 +193,14 @@ public class Endereco extends AbstratoEntidade implements Serializable {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public BigDecimal getAreaHa() {
+        return areaHa;
+    }
+
+    public void setAreaHa(BigDecimal areaHa) {
+        this.areaHa = areaHa;
     }
 
     public Localizacao getLocalizacao() {

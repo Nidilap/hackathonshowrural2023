@@ -38,6 +38,7 @@ public class EnderecoFabricaJSON implements Serializable {
                 endereco.getInscricaoMunicipal(),
                 endereco.getCar(),
                 endereco.getObservacao(),
+                endereco.getAreaHa(),
                 localizacaoFabricaJSON.criar(endereco.getLocalizacao()));
         } catch (Exception ex) {
             return null;

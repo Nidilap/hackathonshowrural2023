@@ -6,6 +6,7 @@
 package com.sysagro.modelo.dto.json;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  *
@@ -29,6 +30,7 @@ public class EnderecoJSON implements Serializable {
     private String inscricaoMunicipal;
     private String car;
     private String observacao;
+    private BigDecimal areaHa;
     private LocalizacaoJSON localizacao;
     
     // Construtor
@@ -36,7 +38,7 @@ public class EnderecoJSON implements Serializable {
     }
     
     public EnderecoJSON(Long idEndereco, Long idCidade, boolean isAtivo, boolean isPrincipal, Integer numero, String endereco, String bairro, String complemento,
-            String cep, String inscricaoEstadual, String inscricaoMunicipal, String car, String observacao, LocalizacaoJSON localizacao) {
+            String cep, String inscricaoEstadual, String inscricaoMunicipal, String car, String observacao, BigDecimal areaHa, LocalizacaoJSON localizacao) {
         this.idEndereco = idEndereco;
         this.idCidade = idCidade;
         this.isAtivo = isAtivo;
@@ -50,6 +52,7 @@ public class EnderecoJSON implements Serializable {
         this.inscricaoMunicipal = inscricaoMunicipal;
         this.car = car;
         this.observacao = observacao;
+        this.areaHa = areaHa;
         this.localizacao = localizacao;
     }
     
@@ -156,6 +159,14 @@ public class EnderecoJSON implements Serializable {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    public BigDecimal getAreaHa() {
+        return areaHa;
+    }
+
+    public void setAreaHa(BigDecimal areaHa) {
+        this.areaHa = areaHa;
     }
 
     public LocalizacaoJSON getLocalizacao() {

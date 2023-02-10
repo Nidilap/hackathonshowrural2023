@@ -24,7 +24,11 @@ public final class NumeroUtil {
     }
     
     public static BigDecimal criarBigDecimal(String valor) {
-        return new BigDecimal(valor);
+        try {
+            return new BigDecimal(valor);
+        } catch (Exception ex) {
+            return BigDecimal.ZERO;
+        }
     }
     
     public static BigDecimal criarBigDecimal(Double valor) {
