@@ -22,6 +22,7 @@ public class VisitaJSON implements Serializable {
     private Long idPessoa;
     private Long idEndereco;
     private ZonedDateTime dataAgendada;
+    private String nomePessoa;
     private String observacao;
     private LocalizacaoJSON checkIn;
     private LocalizacaoJSON checkOut;
@@ -31,12 +32,13 @@ public class VisitaJSON implements Serializable {
     }
     
     public VisitaJSON(Long idVisita, Long idFuncionario, Long idPessoa, Long idEndereco, ZonedDateTime dataAgendada,
-            String observacao, LocalizacaoJSON checkIn, LocalizacaoJSON checkOut) {
+            String nomePessoa, String observacao, LocalizacaoJSON checkIn, LocalizacaoJSON checkOut) {
         this.idVisita = idVisita;
         this.idFuncionario = idFuncionario;
         this.idPessoa = idPessoa;
         this.idEndereco = idEndereco;
         this.dataAgendada = dataAgendada;
+        this.nomePessoa = nomePessoa;
         this.observacao = observacao;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -81,6 +83,14 @@ public class VisitaJSON implements Serializable {
 
     public void setDataAgendada(ZonedDateTime dataAgendada) {
         this.dataAgendada = dataAgendada;
+    }
+
+    public String getNomePessoa() {
+        return nomePessoa;
+    }
+
+    public void setNomePessoa(String nomePessoa) {
+        this.nomePessoa = nomePessoa;
     }
 
     public String getObservacao() {

@@ -6,10 +6,13 @@ class Visita extends BaseModel {
     idVisita!: number;
 
     @Prop("Date")
-    dataAgendada!: Date;
+    dataAgendada!: Date | null;
 
     @Prop("string")
     observacao!: string;
+
+    @Prop("string")
+    nomePessoa!: string;
 
     @Prop("number")
     idFuncionario!: number;
