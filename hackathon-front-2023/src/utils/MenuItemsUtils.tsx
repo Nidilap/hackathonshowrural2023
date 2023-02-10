@@ -3,7 +3,8 @@ import {
     Info,
     Home,
     Inbox,
-    AccountCircle
+    AccountCircle,
+    Map
 } from '@mui/icons-material';
 
 const getItensMenuGeral = () => {
@@ -12,6 +13,7 @@ const getItensMenuGeral = () => {
         new MenuItem(2, "Modal", <AccountCircle />, "/modal"),
         new MenuItem(3, "Sobre", <Info />, "/sobre"),
         new MenuItem(4, "Lotes", <Inbox />, "/lote"),
+        new MenuItem(5, "Mapa", <Map />, "/mapaVendas"),
     ]
 }
 

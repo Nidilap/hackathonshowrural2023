@@ -1,0 +1,79 @@
+@import "../../assets/constants/colors.scss";
+
+.figura {
+    border-radius: 0px 0px 20px 20px;
+    height: 220px;
+    width: 100%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-image: url("../../assets/images/plantacao-de-cafe-1024x768.png");
+    background-image: url("../../assets/images/plantacao-de-cafe-1024x768.png"), linear-gradient(0deg, rgba(4,67,35,1) 0%, rgba(4,67,35,0.84) 22%, rgba(4,67,35,0) 100%);
+
+    display: flex;
+}
+
+.tituloInfoFigura {
+    font-size: 1.7em !important;
+    font-weight: 700 !important;
+}
+
+.enderecoInfoFigura {
+    font-weight: 700 !important;
+}
+
+.informacoesFigura {
+    color: $corTextoClaro;
+    padding-right: 10px;
+}
+
+.informacoesAbaixoWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.informacoesAbaixo {
+    text-align: center;
+}
+
+.infoAdicionalAgricultavel {
+    color: $corPrimaria;
+}
+
+.subtituloModal {
+    display: flex;
+    align-items: center;
+}
+
+.informacoesAbaixo {
+    padding: 5px;
+}
+
+.subtituloModal {
+    font-size: 0.75em !important;
+    font-weight: 700 !important;
+}
+
+.infosAdicionaisModal {
+    font-size: 0.75em !important;
+}
+
+.botao {
+    background-color: $corPrimaria !important;
+    border-radius: 100px !important;
+    height: 60px;
+    width: 60px;
+}
+
+.figuraInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.figuraInfoWrapper {
+    padding: 20px;
+    background: linear-gradient(0deg, rgba(4,67,35,1) 0%, rgba(4,67,35,0.55) 55%, rgba(4,67,35,0) 100%);
+}

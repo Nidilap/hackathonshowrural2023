@@ -25,8 +25,6 @@ const root = ReactDOM.createRoot(
 
 
 root.render(
-  <React.StrictMode>
-    
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
@@ -35,7 +33,6 @@ root.render(
         </PersistGate>
       </Provider>
     </ThemeProvider>
-  </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
