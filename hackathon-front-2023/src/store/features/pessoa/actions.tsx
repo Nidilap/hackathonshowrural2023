@@ -26,7 +26,6 @@ const fetchPessoas = createAsyncThunk<any>('pessoa/fetchPessoas',
 
             const resData = await axiosGet(APISysAgroLinks.ClienteEndPoints.getListaPessoas());
 
-
             let listaPessoas: Pessoa[] = [];
             (resData.dados ?? []).map((item: any) => {
                 listaPessoas.push(ClassUtil.JSONConstructor(item, Pessoa))

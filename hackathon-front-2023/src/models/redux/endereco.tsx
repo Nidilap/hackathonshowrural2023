@@ -1,5 +1,6 @@
 import { Prop } from "../decorators/PropDecorator";
 import BaseModel from "./baseModel";
+import Localizacao from "./localizacao";
 class Endereco extends BaseModel {
 
     @Prop("number")
@@ -28,6 +29,9 @@ class Endereco extends BaseModel {
 
   @Prop("string")
   observacao!: string;
+
+  @Prop("object", Localizacao)
+  localizacao!: Localizacao;
 
 }
 

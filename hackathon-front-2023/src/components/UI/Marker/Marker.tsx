@@ -5,6 +5,8 @@ import { Room } from '@mui/icons-material';
 // CSS
 import './Marker.scss';
 
+
+
 // Component
 const Marker = (props: any) => {
     // General
@@ -19,7 +21,7 @@ const Marker = (props: any) => {
         if (props.title) {
             return (
                 <div className="container-titulo">
-                    <span className="titulo">{props.title}</span>
+                    <div className="titulo">{props.title}</div>
                 </div>
             );
         } else {
@@ -32,7 +34,8 @@ const Marker = (props: any) => {
         <div className="container-marcacao">
             <Room
                 sx={getRoomCSS()}
-                fontSize="large"
+                fontSize={"large"}
+                className="svg_icons"
                 onClick={props.onClick}
             />
             {renderTitle()}

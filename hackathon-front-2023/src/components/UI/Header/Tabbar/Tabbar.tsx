@@ -13,7 +13,6 @@ export default function MainTabbar() {
     const [value, setValue] = React.useState(0);
 
     const location = useLocation();
-    console.log(location.pathname);
 
     const { itensMenu } = useGetMenuItens();
 

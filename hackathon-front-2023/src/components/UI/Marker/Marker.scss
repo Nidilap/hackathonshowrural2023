@@ -21,9 +21,16 @@
     display: flex;
 }
 
-.container-titulo {
-}
-
 .titulo {
     font-weight: bold;
+    color: $corTextoClaro;
+    font-size: 16px;
+    
+    -webkit-text-stroke: 1px #000;
+    text-stroke: 1px #000;
+    min-width: 200px;
+}
+
+.svg_icons {
+  transform: scale(1.4);
 }
