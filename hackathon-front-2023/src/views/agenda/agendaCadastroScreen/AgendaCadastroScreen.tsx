@@ -21,7 +21,7 @@ const AgendaCadastroScreen = () => {
 
 
     const selector = useAppSelector((state: any) => state.root.pessoa);
-    console.log(selector);
+    
     let optionsNome: any = [];
 
     const [nomePessoa, setNomePessoa] = useState<any>({value: "", label: ""});

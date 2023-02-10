@@ -3,6 +3,7 @@ import {
 	createReducer
 } from '@reduxjs/toolkit';
 import Pessoa from '../../../models/redux/pessoa';
+import Visita from '../../../models/redux/visita';
 
 import {
 	fetchPessoas
@@ -13,11 +14,11 @@ import {
 //#endregion Imports
 
 //#region Reducers
-export type AuthState = {
+export type PessoaState = {
 	pessoas: Pessoa[];
 }
 
-const estadoInicial: AuthState = {
+const estadoInicial: PessoaState = {
 	pessoas: []
 };
 

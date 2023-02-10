@@ -1,17 +1,24 @@
+import { useEffect } from 'react';
 import Layout from '../../../components/UI/Layout/Layout';
 import { ArrowForwardIos, ArrowBackIosNew, Add} from '@mui/icons-material';
 import './AgendaScreen.scss';
 import HoraAgenda from '../../../components/UI/HoraAgenda/HoraAgenda';
 import CustomButton from '../../../components/UI/Button/Button';
+import { useAppDispatch, useAppSelector } from '../../../store/configs/hooks';
+import { fetchVisitasByUsuario } from '../../../store/features/visita';
 
 
 
 const AgendaScreen = () => {
-    // const dispatch = useAppDispatch();
+    const dispatch = useAppDispatch();
 
-    // useEffect(() => {
-    //     dispatch(fetchLotes());
-    // }, [])
+    useEffect(() => {
+        dispatch(fetchVisitasByUsuario());
+    }, [])
+
+    
+    const selector = useAppSelector((state: any) => state.root.visita);
+    console.log(selector);
 
     const dias = [];
     for (let i = 7; i <= 23; i++) {
