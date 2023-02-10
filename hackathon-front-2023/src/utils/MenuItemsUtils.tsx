@@ -11,7 +11,7 @@ const getItensMenuGeral = () => {
         new MenuItem(1, "Mapa", <Map />, "/mapaVendas"),
         new MenuItem(2, "Início", <Home />, "/"),
         new MenuItem(3, "Calendário", <CalendarMonth />, "/agenda"),
-        new MenuItem(4, "Agendar", <Schedule />, "/agenda/cadastro"),
+        new MenuItem(4, "Agendar", <Schedule />, "/agendacadastro"),
         
     ]
 }

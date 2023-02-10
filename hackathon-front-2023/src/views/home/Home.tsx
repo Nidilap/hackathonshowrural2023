@@ -11,8 +11,6 @@ const Home = () => {
 
   const { itensMenu } = useGetMenuItens();
 
-  const selector = useAppSelector((state) => state);
-  console.log(selector);
 
   
   return (
