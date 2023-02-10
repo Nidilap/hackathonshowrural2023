@@ -1,0 +1,63 @@
+<ui:composition
+    xmlns:p="http://primefaces.org/ui"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    <!-- Menu -->
+    <h:form prependId="false">
+        <p:outputPanel id="menuLateral" styleClass="#{sessaoUsuarioControlador.loggedIn ? '' : 'ocultar'}">
+            <ul class="sidebar-menu tree" data-widget="tree">
+                <!-- Administração -->
+                <li class="header">
+                    <span class="quebrar-palavra">#{labels['tela.administracao']}</span>
+                </li>
+                <li>
+                    <p:link outcome="/administracao/parametro/index">
+                        <i class="fa fa-cogs"></i>
+                        <span class="quebrar-palavra">#{labels['tela.administracao.parametro']}</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/administracao/perfil/index">
+                        <i class="fa fa-address-card"></i>
+                        <span class="quebrar-palavra">#{labels['tela.administracao.perfil']}</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/administracao/usuario/index">
+                        <i class="fa fa-user-o"></i>
+                        <span class="quebrar-palavra">#{labels['tela.administracao.usuario']}</span>
+                    </p:link>
+                </li>
+                <!-- Cadastros -->
+                <li class="header">
+                    <span class="quebrar-palavra">#{labels['tela.cadastro']}</span>
+                </li>
+                <li>
+                    <p:link outcome="/cadastro/cidade/index">
+                        <i class="fa fa-city"></i>
+                        <span class="quebrar-palavra">#{labels['tela.cadastro.cidade']}</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/cadastro/estado/index">
+                        <i class="fa fa-flag"></i>
+                        <span class="quebrar-palavra">#{labels['tela.cadastro.estado']}</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/cadastro/pais/index">
+                        <i class="fa fa-globe-americas"></i>
+                        <span class="quebrar-palavra">#{labels['tela.cadastro.pais']}</span>
+                    </p:link>
+                </li>
+                <li>
+                    <p:link outcome="/cadastro/pessoa/index">
+                        <i class="fa fa-users"></i>
+                        <span class="quebrar-palavra">Pessoa</span>
+                    </p:link>
+                </li>
+            </ul>
+        </p:outputPanel>
+    </h:form>
+</ui:composition>

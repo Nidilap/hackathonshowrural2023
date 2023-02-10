@@ -1,0 +1,23 @@
+<ui:composition
+    xmlns:p="http://primefaces.org/ui"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:form id="menuSuperiorForm" rendered="#{sessaoUsuarioControlador.loggedIn}">
+        <p:menubar styleClass="menuBarUsuario">
+            <p:submenu label="#{sessaoUsuarioControlador.usuario.nome}" icon="fa fa-user-circle" class="submenu-usuario">
+                <p:menuitem value="#{labels['acao.deslogar']}" icon="fa fa-times" actionListener="#{sessaoUsuarioControlador.deslogar()}" />
+                <p:submenu label="#{labels['idioma.pl']}" icon="fa fa-globe">
+                    <p:menuitem
+                        value="#{labels['idioma.ingles']}"
+                        icon="fa fa-flag"
+                        actionListener="#{sessaoUsuarioControlador.alterarLocalidade('EN_US')}" />
+                    <p:menuitem
+                        value="#{labels['idioma.portugues']}"
+                        icon="fa fa-flag"
+                        actionListener="#{sessaoUsuarioControlador.alterarLocalidade('PT_BR')}" />
+                </p:submenu>
+            </p:submenu>
+        </p:menubar>
+    </h:form>
+</ui:composition>

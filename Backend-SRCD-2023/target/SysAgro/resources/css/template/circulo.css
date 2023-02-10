@@ -1,0 +1,23 @@
+/* Círculos */
+.circulo-vermelho {
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circulo-verde {
+    height: 15px;
+    width: 15px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circulo-botao {
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+}

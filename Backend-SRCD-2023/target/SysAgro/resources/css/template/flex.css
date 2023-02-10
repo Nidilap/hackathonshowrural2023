@@ -1,0 +1,5 @@
+/* Botões */
+.quebrar-linha-flex {
+    height: 0;
+    flex-basis: 100%;
+}

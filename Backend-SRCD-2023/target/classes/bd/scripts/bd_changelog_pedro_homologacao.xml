@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+    <changeSet author="pedro (manual)" id="111111111111-1">
+        <sql>
+            INSERT INTO public.usuario (id, data_hora_criacao, usuario_criacao, email, is_ativo, login, nome, senha, versao, id_foto)
+            VALUES (NEXTVAL('seq_usuario'), CURRENT_TIMESTAMP, 1, 'admin@gmail.com', TRUE, 'admin', 'ADMIN', 'admin', 0, NULL);
+            
+            INSERT INTO public.empresa (id, data_hora_criacao, usuario_criacao, codigo, is_ativo, is_matriz, nome, versao, id_pessoa)
+            VALUES(NEXTVAL('seq_empresa'), CURRENT_TIMESTAMP, 1, '01', TRUE, TRUE, 'COOPAVEL', 0, NULL);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
