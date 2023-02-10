@@ -1,0 +1,28 @@
+/* Labels */
+.label-aberto {
+    color: VAR(--cor-branca);
+    padding: 4px;
+    border-radius: 10px;
+    background-color: VAR(--cor-aberto);
+}
+
+.label-manejo {
+    color: VAR(--cor-branca);
+    padding: 4px;
+    border-radius: 10px;
+    background-color: VAR(--cor-manejo);
+}
+
+.label-cancelado {
+    color: VAR(--cor-branca);
+    padding: 4px;
+    border-radius: 10px;
+    background-color: VAR(--cor-cancelado);
+}
+
+.label-finalizado {
+    color: VAR(--cor-branca);
+    padding: 4px;
+    border-radius: 10px;
+    background-color: VAR(--cor-finalizado);
+}

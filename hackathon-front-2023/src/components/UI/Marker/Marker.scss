@@ -5,8 +5,8 @@
     border: 8px solid $corPrimaria;
     width: 8px;
     height: 8px;
-  }
-  
+}
+
 .marcador::after {
     position: absolute;
     content: "";
@@ -14,5 +14,16 @@
     height: 0px;
     left: 0px;
     border: 8px solid transparent;
-    border-top: 17px solid  $corPrimaria;
-  }
+    border-top: 17px solid $corPrimaria;
+}
+
+.container-marcacao {
+    display: flex;
+}
+
+.container-titulo {
+}
+
+.titulo {
+    font-weight: bold;
+}

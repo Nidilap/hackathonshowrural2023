@@ -1,0 +1,131 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:form id="cadastroUsuarioForm" styleClass="ocultar" prependId="false">
+        <p:panel styleClass="box-primary card">
+            <p:tabView id="cadastroUsuarioTabView">
+                <!-- Aba Geral -->
+                <p:tab title="#{labels['geral.si']}">
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                            <div class="ui-sm-12 ui-g-11">
+                                <p:outputLabel
+                                    value="#{labels['usuario.login']}"
+                                    for="inputTextLoginUsuario"/>
+                            </div>
+                            <div class="ui-sm-12 ui-g-11" >
+                                <p:inputText
+                                    id="inputTextLoginUsuario"
+                                    required="true"
+                                    value="#{usuarioControlador.usuario.login}"/>
+                                <span class="help-block"> 
+                                    <p:message for="inputTextLoginUsuario" /> 
+                                </span> 
+                            </div>
+                        </div>
+                        <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                            <div class="ui-sm-12 ui-g-11">
+                                <p:outputLabel
+                                    value="#{labels['usuario.si']}"
+                                    for="inputTextNomeUsuario"/>
+                            </div>
+                            <div class="ui-sm-12 ui-g-11" >
+                                <p:inputText
+                                    id="inputTextNomeUsuario"
+                                    required="true"
+                                    value="#{usuarioControlador.usuario.nome}"/>
+                                <span class="help-block"> 
+                                    <p:message for="inputTextNomeUsuario" /> 
+                                </span> 
+                            </div>
+                        </div>
+                        <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                            <div class="ui-sm-12 ui-g-11">
+                                <p:outputLabel
+                                    value="#{labels['usuario.email']}"
+                                    for="inputTextEmailUsuario"/>
+                            </div>
+                            <div class="ui-sm-12 ui-g-11" >
+                                <p:inputText
+                                    id="inputTextEmailUsuario"
+                                    value="#{usuarioControlador.usuario.email}"/>
+                                <span class="help-block"> 
+                                    <p:message for="inputTextEmailUsuario" /> 
+                                </span> 
+                            </div>
+                        </div>
+                        <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                            <div class="ui-sm-12 ui-g-11">
+                                <p:outputLabel
+                                    value="#{labels['usuario.senha']}"
+                                    for="passwordSenhaUsuario"/>
+                            </div>
+                            <div class="ui-sm-12 ui-g-11">
+                                <p:password
+                                    id="passwordSenhaUsuario"
+                                    required="true"
+                                    redisplay="true"
+                                    value="#{usuarioControlador.usuario.senha}"/>
+                                <span class="help-block"> 
+                                    <p:message for="passwordSenhaUsuario" /> 
+                                </span> 
+                            </div>
+                        </div>
+                        <div class="ui-sm-12 ui-g-6 ui-g-nopad"> 
+                            <div class="ui-sm-12 ui-g-11">
+                                <p:outputLabel
+                                    value="#{labels['usuario.senha.confirmacao']}"
+                                    for="passwordConfirmacaoSenhaUsuario"/>
+                            </div>
+                            <div class="ui-sm-12 ui-g-11">
+                                <p:password
+                                    id="passwordConfirmacaoSenhaUsuario"
+                                    required="true"
+                                    redisplay="true"
+                                    value="#{usuarioControlador.usuario.confirmacaoSenhaTR}"/>
+                                <span class="help-block"> 
+                                    <p:message for="passwordConfirmacaoSenhaUsuario" /> 
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </p:tab>
+                <!-- Aba de Perfis -->
+                <p:tab title="#{labels['perfil.pl']}">
+                    <p:pickList
+                        var="perfilUsuarioVarPL"
+                        converter="objetoConversor"
+                        responsive="true"
+                        itemLabel="#{perfilUsuarioVarPL.perfil.nome}"
+                        itemValue="#{perfilUsuarioVarPL}"
+                        value="#{usuarioControlador.modeloDuploPerfisUsuario}">
+                        <f:facet name="sourceCaption">#{labels['geral.disponivel.pl']}</f:facet>
+                        <f:facet name="targetCaption">#{labels['geral.vinculado.pl']}</f:facet>
+                    </p:pickList>
+                </p:tab>
+            </p:tabView>
+        </p:panel>
+        <br />
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-2 ui-xl-2">
+                <p:commandButton
+                    value="#{labels['acao.salvar']}"
+                    icon="fa fa-save"
+                    styleClass="btn-primary w-full"
+                    update="cadastroUsuarioTabView"
+                    actionListener="#{usuarioControlador.salvar()}" />
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-2 ui-xl-2">
+                <p:commandButton
+                    value="#{labels['acao.fechar']}"
+                    type="button"
+                    icon="fa fa-times"
+                    styleClass="btn-danger w-full"
+                    onclick="handleListagemUsuarios()" />
+            </div>
+        </div>
+    </h:form>
+</ui:composition>

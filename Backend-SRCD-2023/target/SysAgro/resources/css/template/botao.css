@@ -1,0 +1,17 @@
+/* Botões */
+.botao-abrir-anexo {
+    background-color: VAR(--cor-roxa) !important;
+}
+
+.botao-abrir-anexo span.ui-icon {
+    color: VAR(--cor-branca) !important;
+}
+
+.botao-imprimir-relatorio {
+    color: VAR(--cor-branca) !important;
+    background-color: VAR(--cor-laranja) !important;
+}
+
+.botao-imprimir-relatorio span.ui-icon {
+    color: VAR(--cor-branca) !important;
+}
